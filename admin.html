@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Admin Panel | Healing Hands Advanced Physiotherapy Clinic</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+
+<!-- ============================================================
+     LOGIN GATE
+     ============================================================ -->
+<div class="admin-gate" id="admin-gate">
+  <div class="admin-gate-card">
+    <img src="images/logo.png" alt="Healing Hands logo">
+    <h1>Admin Panel</h1>
+    <p>Sign in to manage appointments, doctors and services.</p>
+    <form id="login-form" autocomplete="off">
+      <div>
+        <label class="adm-label" for="login-pass">Passcode</label>
+        <input type="password" id="login-pass" class="adm-input" placeholder="Enter admin passcode" required>
+      </div>
+      <p class="adm-error" id="login-error"></p>
+      <button type="submit" class="adm-btn adm-btn-primary" style="justify-content:center;">Sign in</button>
+    </form>
+  </div>
+</div>
+
+<!-- ============================================================
+     ADMIN SHELL
+     ============================================================ -->
+<div class="admin-shell" id="admin-shell">
+
+  <header class="admin-topbar">
+    <div class="admin-topbar-inner">
+      <a href="index.html" class="admin-brand">
+        <img src="images/logo.png" alt="">
+        <span>
+          <strong>Healing Hands</strong>
+          <span>Admin Panel</span>
+        </span>
+      </a>
+      <div class="admin-topbar-actions">
+        <a href="index.html" class="adm-btn adm-btn-sm" target="_blank" rel="noopener">View site ↗</a>
+        <button class="adm-btn adm-btn-sm" id="logout-btn" type="button">Sign out</button>
+      </div>
+    </div>
+    <nav class="admin-tabs" id="admin-tabs" aria-label="Admin sections">
+      <button class="admin-tab is-active" type="button" data-panel="appointments">
+        Appointments <span class="tab-count" id="tab-count-appts">0</span>
+      </button>
+      <button class="admin-tab" type="button" data-panel="doctors">Doctors</button>
+      <button class="admin-tab" type="button" data-panel="specialties">Homepage Section</button>
+      <button class="admin-tab" type="button" data-panel="services">Services</button>
+      <button class="admin-tab" type="button" data-panel="clinicinfo">Clinic Info</button>
+      <button class="admin-tab" type="button" data-panel="settings">Settings</button>
+    </nav>
+  </header>
+
+  <main class="admin-main">
+
+    <!-- ---------- APPOINTMENTS ---------- -->
+    <section class="admin-panel is-active" id="panel-appointments">
+      <div class="admin-panel-head">
+        <h2>Appointment requests</h2>
+        <p>Every booking submitted through the website lands here. Update the status as you call patients back.</p>
+      </div>
+
+      <div class="admin-stats" id="appt-stats"></div>
+
+      <div class="admin-toolbar">
+        <input type="search" id="appt-search" class="adm-input grow" placeholder="Search name, mobile, email or concern…">
+        <select id="appt-status-filter" class="adm-select" style="width:auto;">
+          <option value="">All statuses</option>
+          <option>New</option>
+          <option>Confirmed</option>
+          <option>Completed</option>
+          <option>Cancelled</option>
+        </select>
+        <select id="appt-range-filter" class="adm-select" style="width:auto;">
+          <option value="">All dates</option>
+          <option value="today">Today</option>
+          <option value="upcoming">Upcoming</option>
+          <option value="past">Past</option>
+        </select>
+        <span class="spacer"></span>
+        <button class="adm-btn" id="appt-export" type="button">Export CSV</button>
+        <button class="adm-btn" id="appt-print" type="button">Print</button>
+      </div>
+
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Patient</th>
+              <th>Contact</th>
+              <th>Appointment</th>
+              <th>Treatment</th>
+              <th>Concern</th>
+              <th>Status</th>
+              <th>Notes</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="appt-tbody"></tbody>
+        </table>
+        <div class="admin-empty" id="appt-empty" hidden>
+          No appointment requests yet. New bookings from the website will appear here.
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- DOCTORS ---------- -->
+    <section class="admin-panel" id="panel-doctors">
+      <div class="admin-panel-head">
+        <h2>Doctor details</h2>
+        <p>These cards appear in the “Meet the team” section on the homepage and on the About Us page. Changes go live as soon as you save.</p>
+      </div>
+
+      <div class="admin-toolbar">
+        <button class="adm-btn adm-btn-primary" id="doctor-add" type="button">+ Add doctor</button>
+        <span class="spacer"></span>
+        <button class="adm-btn" id="doctor-save" type="button">Save changes</button>
+      </div>
+
+      <div class="admin-card-list" id="doctor-list"></div>
+    </section>
+
+    <!-- ---------- HOMEPAGE SPECIALTIES SECTION ---------- -->
+    <section class="admin-panel" id="panel-specialties">
+      <div class="admin-panel-head">
+        <h2>Homepage section — “Find the right physiotherapy for you”</h2>
+        <p>Edit the heading, the intro text and the sliding cards shown in the specialties carousel on the homepage.</p>
+      </div>
+
+      <div class="admin-card" style="margin-bottom:18px;">
+        <div class="admin-card-head"><h3>Section heading &amp; text</h3></div>
+        <div class="adm-field">
+          <label class="adm-label" for="sp-tag">Small tag above the heading</label>
+          <input type="text" id="sp-tag" class="adm-input">
+        </div>
+        <div class="adm-field">
+          <label class="adm-label" for="sp-heading">Heading</label>
+          <input type="text" id="sp-heading" class="adm-input">
+        </div>
+        <div class="adm-field">
+          <label class="adm-label" for="sp-intro">Intro paragraph</label>
+          <textarea id="sp-intro" class="adm-textarea"></textarea>
+        </div>
+      </div>
+
+      <div class="admin-toolbar">
+        <button class="adm-btn adm-btn-primary" id="specialty-add" type="button">+ Add card</button>
+        <span class="spacer"></span>
+        <button class="adm-btn" id="specialty-save" type="button">Save changes</button>
+      </div>
+
+      <div class="admin-card-list" id="specialty-list"></div>
+    </section>
+
+    <!-- ---------- SERVICES ---------- -->
+    <section class="admin-panel" id="panel-services">
+      <div class="admin-panel-head">
+        <h2>Services offered</h2>
+        <p>These are the service cards on the Services page. Edit the titles, descriptions and icons, or add new services.</p>
+      </div>
+
+      <div class="admin-card" style="margin-bottom:18px;">
+        <div class="admin-card-head"><h3>Section heading &amp; text</h3></div>
+        <div class="adm-field">
+          <label class="adm-label" for="sv-tag">Small tag above the heading</label>
+          <input type="text" id="sv-tag" class="adm-input">
+        </div>
+        <div class="adm-field">
+          <label class="adm-label" for="sv-heading">Heading</label>
+          <input type="text" id="sv-heading" class="adm-input">
+        </div>
+        <div class="adm-field">
+          <label class="adm-label" for="sv-intro">Intro paragraph</label>
+          <textarea id="sv-intro" class="adm-textarea"></textarea>
+        </div>
+      </div>
+
+      <div class="admin-toolbar">
+        <button class="adm-btn adm-btn-primary" id="service-add" type="button">+ Add service</button>
+        <span class="spacer"></span>
+        <button class="adm-btn" id="service-save" type="button">Save changes</button>
+      </div>
+
+      <div class="admin-card-list" id="service-list"></div>
+    </section>
+
+    <!-- ---------- CLINIC INFO ---------- -->
+    <section class="admin-panel" id="panel-clinicinfo">
+      <div class="admin-panel-head">
+        <h2>Clinic contact &amp; timings</h2>
+        <p>Edit the phone number, WhatsApp number, address and clinic hours. These appear on every page of the site — topbar, footer, floating buttons and CTA sections.</p>
+      </div>
+
+      <div class="admin-card" style="margin-bottom:14px;">
+        <div class="admin-card-head"><h3>Contact numbers</h3></div>
+        <div class="adm-grid-2">
+          <div class="adm-field">
+            <label class="adm-label" for="set-pass-current">Current passcode</label>
+            <input type="password" id="set-pass-current" class="adm-input" autocomplete="current-password">
+          </div>
+          <div class="adm-field">
+            <label class="adm-label" for="ci-phone">Phone number (with country code)</label>
+            <input type="tel" id="ci-phone" class="adm-input" placeholder="+918523841691">
+          </div>
+          <div class="adm-field">
+            <label class="adm-label" for="ci-whatsapp">WhatsApp number (digits only, with country code)</label>
+            <input type="tel" id="ci-whatsapp" class="adm-input" placeholder="910000000000">
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-card" style="margin-bottom:14px;">
+        <div class="admin-card-head"><h3>Address</h3></div>
+        <div class="adm-grid-2">
+          <div class="adm-field">
+            <label class="adm-label" for="ci-address-line1">Address line 1 (street / colony)</label>
+            <input type="text" id="ci-address-line1" class="adm-input" placeholder="CANARA BANK, H, No. 1 Opp:, 7-1204, Advocates Colony, Nakkala Gutta">
+          </div>
+          <div class="adm-field">
+            <label class="adm-label" for="ci-address-city">Address line 2 (city, state)</label>
+            <input type="text" id="ci-address-city" class="adm-input" placeholder="Hyderabad, Telangana">
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-card" style="margin-bottom:14px;">
+        <div class="admin-card-head"><h3>Clinic hours</h3></div>
+        <div class="adm-grid-2">
+          <div class="adm-field">
+            <label class="adm-label" for="ci-hours-days">Days</label>
+            <input type="text" id="ci-hours-days" class="adm-input" placeholder="Mon–Sat">
+          </div>
+          <div class="adm-field">
+            <label class="adm-label" for="ci-hours-open">Opening time</label>
+            <input type="text" id="ci-hours-open" class="adm-input" placeholder="10:00 AM">
+          </div>
+          <div class="adm-field">
+            <label class="adm-label" for="ci-hours-close">Closing time</label>
+            <input type="text" id="ci-hours-close" class="adm-input" placeholder="8:30 PM">
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="adm-btn adm-btn-primary" id="clinicinfo-save" type="button">Save clinic info</button>
+      </div>
+    </section>
+
+    <!-- ---------- SETTINGS ---------- -->
+    <section class="admin-panel" id="panel-settings">
+      <div class="admin-panel-head">
+        <h2>Settings &amp; backup</h2>
+        <p>Change the admin passcode, back up your content and appointments, or restore from a backup file.</p>
+      </div>
+
+      <div class="admin-note" id="storage-warning" hidden>
+        <strong>Heads up:</strong> your browser is blocking local storage, so nothing saved here will survive a page refresh.
+        Try turning off private browsing mode.
+      </div>
+
+      <div class="admin-card" style="margin-bottom:14px;">
+        <div class="admin-card-head"><h3>Admin passcode</h3></div>
+        <div class="adm-grid-2">
+          <div class="adm-field">
+            <label class="adm-label" for="set-pass-new">New passcode</label>
+            <input type="password" id="set-pass-new" class="adm-input" autocomplete="new-password">
+          </div>
+          <div class="adm-field">
+            <label class="adm-label" for="set-pass-confirm">Confirm new passcode</label>
+            <input type="password" id="set-pass-confirm" class="adm-input" autocomplete="new-password">
+          </div>
+        </div>
+        <p class="adm-error" id="set-pass-error"></p>
+        <button class="adm-btn adm-btn-primary" id="set-pass-save" type="button">Update passcode</button>
+      </div>
+
+      <div class="admin-card" style="margin-bottom:14px;">
+        <div class="admin-card-head"><h3>Backup &amp; restore</h3></div>
+        <p style="font-size:.86rem;color:var(--adm-muted);margin:0 0 14px;">
+          Download a JSON file with all content and appointments. Keep a copy somewhere safe — clearing your browser data will
+          wipe everything stored here.
+        </p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button class="adm-btn adm-btn-primary" id="backup-export" type="button">Download backup</button>
+          <button class="adm-btn" id="backup-import-btn" type="button">Restore from file</button>
+          <input type="file" id="backup-import" accept="application/json,.json" hidden>
+        </div>
+      </div>
+
+      <div class="admin-card">
+        <div class="admin-card-head"><h3>Reset</h3></div>
+        <p style="font-size:.86rem;color:var(--adm-muted);margin:0 0 14px;">
+          Restore doctors, homepage cards and services to the original website content. Appointments are not affected.
+        </p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button class="adm-btn adm-btn-danger" id="reset-content" type="button">Reset content to defaults</button>
+          <button class="adm-btn adm-btn-danger" id="clear-appts" type="button">Delete all appointments</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="admin-toast" id="admin-toast" role="status" aria-live="polite"></div>
+
+<script src="js/site-data.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
