@@ -7,7 +7,6 @@
    exactly as a visitor would.
 
    Run: node scripts/check-routes-http.js   (or as part of `npm test`) */
-const { spawn } = require('child_process');
 const http = require('http');
 const path = require('path');
 
@@ -77,12 +76,14 @@ const FORBIDDEN = ['/server.js', '/lib/handler.js', '/scripts/seed.js', '/packag
   '/supabase/schema.sql', '/legacy/server.js', '/node_modules/express/package.json'];
 
 (async () => {
-  const srv = spawn(process.execPath, [path.join(ROOT, 'server.js')], {
-    cwd: ROOT,
-    env: Object.assign({}, process.env, { PORT: String(PORT) }),
-    stdio: 'ignore'
-  });
-  await new Promise((r) => setTimeout(r, 4000));
+  /* Require the server rather than spawning it, because that is what Vercel
+     does: it imports server.js and looks for listen() being called. An earlier
+     version guarded listen() behind `require.main === module`, so Vercel found
+     no entrypoint, deployed nothing, and every URL returned 404 -- while a
+     spawned-process test passed happily. Requiring it here reproduces that. */
+  process.env.PORT = String(PORT);
+  require(path.join(ROOT, 'server.js'));
+  await new Promise((r) => setTimeout(r, 1500));
 
   let bad = 0;
   const line = (ok, label, extra) => {
@@ -140,7 +141,6 @@ const FORBIDDEN = ['/server.js', '/lib/handler.js', '/scripts/seed.js', '/packag
 
     console.log('\n  ' + (bad ? bad + ' check(s) failed' : 'all routing checks passed') + '\n');
   } finally {
-    srv.kill();
+    process.exit(bad ? 1 : 0);
   }
-  process.exit(bad ? 1 : 0);
 })();

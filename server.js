@@ -126,11 +126,17 @@ app.use((req, res) => {
   res.status(404).send('Not found');
 });
 
-if (require.main === module) {
-  app.listen(PORT, () => {
-    console.log(`\n  Healing Hands running at http://localhost:${PORT}`);
-    console.log(`  Admin panel: http://localhost:${PORT}/admin.html\n`);
-  });
-}
+/* ---------- start ----------
+   listen() is called unconditionally, with no `require.main === module` guard.
+   Vercel imports this file to detect the server and relies on seeing listen()
+   called during module startup; behind a guard the call never happens, Vercel
+   finds no entrypoint, and the whole deployment returns 404.
+
+   Locally this also means `node server.js` and `require('./server.js')` behave
+   the same way, which is what scripts/check-routes-http.js relies on. */
+app.listen(PORT, () => {
+  console.log(`\n  Healing Hands running at http://localhost:${PORT}`);
+  console.log(`  Admin panel: http://localhost:${PORT}/admin.html\n`);
+});
 
 module.exports = app;
