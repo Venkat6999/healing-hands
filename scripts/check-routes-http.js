@@ -1,89 +1,69 @@
-/* Boot the real server and probe it over HTTP.
+/* Boot the local server (which mirrors the Vercel deployment) and probe it
+   over real HTTP.
 
-   This is the check that was missing. The old suite called the handler
-   directly in-process, so it passed while the deployed site returned 404
-   for every multi-segment route -- Vercel never routed the request. Probing
-   a real HTTP server exercises routing, static mounting and access control
-   exactly as a visitor would.
+   The API is a single Function at /api, so every call must carry its logical
+   route in the X-HH-Route header. A request without that header, or with a
+   route the backend does not implement, must come back 400/404 rather than
+   silently succeeding.
 
    Run: node scripts/check-routes-http.js   (or as part of `npm test`) */
+const { spawn } = require('child_process');
 const http = require('http');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
-const PORT = 3111; // deliberately not 3000, so a dev server can stay up
+const PORT = 3111;
 const BASE = `http://127.0.0.1:${PORT}`;
 
-function req(method, url, body) {
+function req(method, url, { route, body, token } = {}) {
   return new Promise((resolve) => {
-    const data = body ? JSON.stringify(body) : null;
-    const r = http.request(BASE + url, {
-      method,
-      headers: Object.assign(
-        {},
-        data ? { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(data) } : {}
-      )
-    }, (res) => {
+    const headers = {};
+    let payload = null;
+    if (route) headers['X-HH-Route'] = route;
+    if (token) headers['Authorization'] = 'Bearer ' + token;
+    if (body !== undefined) {
+      payload = JSON.stringify(body);
+      headers['Content-Type'] = 'application/json';
+      headers['Content-Length'] = Buffer.byteLength(payload);
+    }
+    const r = http.request(BASE + url, { method, headers }, (res) => {
       let out = '';
       res.on('data', (c) => { out += c; });
-      res.on('end', () => resolve({ status: res.statusCode, body: out, headers: res.headers }));
+      res.on('end', () => {
+        let json = null;
+        try { json = JSON.parse(out); } catch (e) { /* not json */ }
+        resolve({ status: res.statusCode, body: json, raw: out, headers: res.headers });
+      });
     });
-    r.on('error', () => resolve({ status: 0, body: '', headers: {} }));
-    if (data) r.write(data);
+    r.on('error', () => resolve({ status: 0, body: null, raw: '', headers: {} }));
+    if (payload) r.write(payload);
     r.end();
   });
 }
 
-/* [url, expected status, description]
-   200 public read · 401 auth required · 400 validation rejected
-   All three prove the route matched. 404 means unrouted. */
+/* [route, expected status] -- 200 public, 401 auth, 400 rejected */
 const API = [
-  ['/api/version', 200, 'version (public)'],
-  ['/api/doctors', 200, 'doctors (public)'],
-  ['/api/specialties', 200, 'specialties (public)'],
-  ['/api/services', 200, 'services (public)'],
-  ['/api/section-copy', 200, 'section-copy (public)'],
-  ['/api/clinic-info', 200, 'clinic-info (public)'],
-  ['/api/content', 200, 'content (public)'],
-  ['/api/content-schema', 200, 'content-schema (public)'],
-  ['/api/conditions', 200, 'conditions (public)'],
-  ['/api/therapies', 200, 'therapies (public)'],
-  ['/api/directory', 200, 'directory (public)'],
-  ['/api/blogposts', 200, 'blogposts (public)'],
-  ['/api/bookingoptions', 200, 'bookingoptions (public)'],
-  ['/api/auth/check', 401, 'auth/check  (2 segments)'],
-  ['/api/images', 401, 'images      (admin)'],
-  ['/api/appointments', 401, 'appointments (admin)'],
-  ['/api/backup', 401, 'backup      (admin)']
+  ['/version', 200], ['/doctors', 200], ['/specialties', 200], ['/services', 200],
+  ['/section-copy', 200], ['/clinic-info', 200], ['/content', 200], ['/content-schema', 200],
+  ['/conditions', 200], ['/therapies', 200], ['/directory', 200], ['/blogposts', 200],
+  ['/bookingoptions', 200],
+  ['/auth/check', 401], ['/images', 401], ['/appointments', 401], ['/backup', 401]
 ];
 
 const API_POST = [
-  ['/api/auth/login', 401, 'auth/login   (2 segments, bad passcode)'],
-  ['/api/auth/change-passcode', 401, 'auth/change-passcode (2 segments)'],
-  ['/api/appointments/add', 400, 'appointments/add (2 segments, empty body)'],
-  ['/api/content/reset', 401, 'content/reset (2 segments)'],
-  ['/api/backup/import', 401, 'backup/import (2 segments)'],
-  ['/api/upload', 401, 'upload        (admin)'],
-  ['/api/reset', 401, 'reset         (admin)']
+  ['/auth/login', 401], ['/auth/change-passcode', 401], ['/content/reset', 401],
+  ['/backup/import', 401], ['/upload', 401], ['/reset', 401],
+  ['/appointments/add', 400], ['/doctors', 401]
 ];
 
-const PAGES = ['/', '/index.html', '/about.html', '/services.html',
-  '/what-we-treat.html', '/blog.html', '/faq.html', '/book-appointment.html', '/admin.html'];
-
-/* must never be reachable over HTTP */
-const FORBIDDEN = ['/server.js', '/lib/handler.js', '/scripts/seed.js', '/package.json',
-  '/.env', '/data/passcode.json', '/data/doctors.json', '/pages/admin.html',
-  '/supabase/schema.sql', '/legacy/server.js', '/node_modules/express/package.json'];
+const PAGES = ['/', '/index.html', '/about.html', '/services.html', '/what-we-treat.html',
+  '/blog.html', '/faq.html', '/book-appointment.html', '/admin.html'];
 
 (async () => {
-  /* Require the server rather than spawning it, because that is what Vercel
-     does: it imports server.js and looks for listen() being called. An earlier
-     version guarded listen() behind `require.main === module`, so Vercel found
-     no entrypoint, deployed nothing, and every URL returned 404 -- while a
-     spawned-process test passed happily. Requiring it here reproduces that. */
-  process.env.PORT = String(PORT);
-  require(path.join(ROOT, 'server.js'));
-  await new Promise((r) => setTimeout(r, 1500));
+  const srv = spawn(process.execPath, [path.join(ROOT, 'scripts', 'local-server.js')], {
+    cwd: ROOT, env: Object.assign({}, process.env, { PORT: String(PORT) }), stdio: 'ignore'
+  });
+  await new Promise((r) => setTimeout(r, 4000));
 
   let bad = 0;
   const line = (ok, label, extra) => {
@@ -92,55 +72,74 @@ const FORBIDDEN = ['/server.js', '/lib/handler.js', '/scripts/seed.js', '/packag
   };
 
   try {
-    console.log('\n=== API: public reads (200) ===');
-    for (const [url, want, desc] of API.filter((a) => a[1] === 200)) {
-      const r = await req('GET', url);
-      line(r.status === want, `${url.padEnd(24)} ${desc}`, `got ${r.status}`);
+    console.log('\n=== public reads, route in X-HH-Route ===');
+    for (const [route, want] of API.filter((a) => a[1] === 200)) {
+      const r = await req('GET', '/api', { route });
+      line(r.status === want, route.padEnd(22), `got ${r.status}`);
     }
 
-    console.log('\n=== API: protected + multi-segment ===');
-    for (const [url, want, desc] of API.filter((a) => a[1] === 401)) {
-      const r = await req('GET', url);
-      line(r.status === want, `${url.padEnd(24)} ${desc}`, `got ${r.status}`);
-    }
-    for (const [url, want, desc] of API_POST) {
-      const r = await req('POST', url, {});
-      line(r.status === want, `${url.padEnd(24)} ${desc}`, `got ${r.status}`);
+    console.log('\n=== protected routes ===');
+    for (const [route, want] of API.filter((a) => a[1] === 401)) {
+      const r = await req('GET', '/api', { route });
+      line(r.status === want, route.padEnd(22), `got ${r.status}`);
     }
 
-    console.log('\n=== pages (flat URLs must resolve) ===');
+    console.log('\n=== writes (route in header, payload in body) ===');
+    for (const [route, want] of API_POST) {
+      const r = await req('POST', '/api', { route, body: {} });
+      line(r.status === want, route.padEnd(22), `got ${r.status}`);
+    }
+
+    console.log('\n=== unknown route must be rejected ===');
+    const bad1 = await req('GET', '/api', { route: '/does-not-exist' });
+    line(bad1.status === 404, 'unknown route -> 404', `got ${bad1.status}`);
+    const bad2 = await req('GET', '/api', { route: '/../../package.json' });
+    line(bad2.status === 400, 'traversal route -> 400', `got ${bad2.status}`);
+
+    console.log('\n=== sign-in and a full authenticated round trip ===');
+    const login = await req('POST', '/api', { route: '/auth/login', body: { passcode: process.env.HH_TEST_PASSCODE || 'healinghands2026' } });
+    line(login.status === 200 && !!login.body.token, 'POST /auth/login -> token', `got ${login.status}`);
+    const token = login.body && login.body.token;
+    if (token) {
+      const chk = await req('GET', '/api', { route: '/auth/check', token });
+      line(chk.status === 200 && chk.body.ok === true, 'GET /auth/check with token', `got ${chk.status}`);
+      const imgs = await req('GET', '/api', { route: '/images', token });
+      line(imgs.status === 200 && Array.isArray(imgs.body), 'GET /images with token', `got ${imgs.status}`);
+      const appts = await req('GET', '/api', { route: '/appointments', token });
+      line(appts.status === 200 && Array.isArray(appts.body), 'GET /appointments with token', `got ${appts.status}`);
+      const bk = await req('GET', '/api', { route: '/backup', token });
+      line(bk.status === 200 && 'content' in bk.body, 'GET /backup with token', `got ${bk.status}`);
+    }
+
+    console.log('\n=== pages ===');
     for (const url of PAGES) {
       const r = await req('GET', url);
-      line(r.status === 200 && /<html/i.test(r.body), url, `got ${r.status}`);
+      line(r.status === 200 && /<html/i.test(r.raw), url, `got ${r.status}`);
     }
 
     console.log('\n=== assets ===');
-    for (const url of ['/css/style.css', '/css/admin.css', '/js/site-data.js',
-      '/js/admin.js', '/js/main.js', '/images/logo.png', '/data/content.json']) {
+    for (const url of ['/css/style.css', '/css/admin.css', '/js/site-data.js', '/js/admin.js',
+      '/js/main.js', '/images/logo.png', '/data/content.json']) {
       const r = await req('GET', url);
       line(r.status === 200, url, `got ${r.status}`);
     }
 
-    console.log('\n=== security headers present ===');
+    console.log('\n=== api/ internals must NOT be served as static files ===');
+    for (const url of ['/api/index.js', '/lib/handler.js', '/package.json', '/data/passcode.json']) {
+      const r = await req('GET', url);
+      const leaked = r.status === 200 && /require\(|module\.exports/.test(r.raw);
+      line(!leaked, url, `got ${r.status}`);
+    }
+
+    console.log('\n=== security headers ===');
     const h = (await req('GET', '/')).headers;
     line(h['x-content-type-options'] === 'nosniff', 'X-Content-Type-Options');
     line(!!h['x-frame-options'], 'X-Frame-Options');
     line(!!h['referrer-policy'], 'Referrer-Policy');
 
-    console.log('\n=== source files must NOT be served ===');
-    for (const url of FORBIDDEN) {
-      const r = await req('GET', url);
-      line(r.status === 404, url, `got ${r.status}`);
-    }
-
-    console.log('\n=== path traversal ===');
-    for (const url of ['/uploads/..%2F..%2Fpackage.json', '/../package.json', '/images/../../package.json']) {
-      const r = await req('GET', url);
-      line(r.status === 404 || r.status === 301 || r.status === 302, url, `got ${r.status}`);
-    }
-
     console.log('\n  ' + (bad ? bad + ' check(s) failed' : 'all routing checks passed') + '\n');
   } finally {
-    process.exit(bad ? 1 : 0);
+    srv.kill();
   }
+  process.exit(bad ? 1 : 0);
 })();

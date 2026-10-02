@@ -88,9 +88,25 @@
   var serverVersion = 0;
   var apiAvailable = true;
 
-  /* ---------- API helpers ---------- */
+  /* ---------- API helpers ----------
+
+     Every backend route is served by the single Function at /api, so the
+     logical route travels in the X-HH-Route header rather than the URL.
+     The four helpers below are the only place that changes: all ~30 call
+     sites already pass an endpoint such as '/auth/login' and are untouched.
+  */
+  function routeUrl(endpoint) {
+    return API_BASE + '?r=' + encodeURIComponent(endpoint);
+  }
+
+  function routeHeaders(endpoint, json) {
+    var h = adminHeaders(json);
+    h['X-HH-Route'] = endpoint;
+    return h;
+  }
+
   function apiGet(endpoint) {
-    return fetch(API_BASE + endpoint, { headers: adminHeaders(false) })
+    return fetch(routeUrl(endpoint), { headers: routeHeaders(endpoint, false) })
       .then(function (res) {
         if (!res.ok) throw new Error('API error');
         return res.json();
@@ -98,9 +114,9 @@
   }
 
   function apiPost(endpoint, data) {
-    return fetch(API_BASE + endpoint, {
+    return fetch(API_BASE, {
       method: 'POST',
-      headers: adminHeaders(true),
+      headers: routeHeaders(endpoint, true),
       body: JSON.stringify(data)
     }).then(function (res) {
       if (!res.ok) throw new Error('API error');
@@ -121,9 +137,9 @@
   }
 
   function apiPut(endpoint, data) {
-    return fetch(API_BASE + endpoint, {
+    return fetch(API_BASE, {
       method: 'PUT',
-      headers: adminHeaders(true),
+      headers: routeHeaders(endpoint, true),
       body: JSON.stringify(data)
     }).then(function (res) {
       if (!res.ok) throw new Error('API error');
@@ -132,7 +148,7 @@
   }
 
   function apiDelete(endpoint) {
-    return fetch(API_BASE + endpoint, { method: 'DELETE', headers: adminHeaders(false) })
+    return fetch(routeUrl(endpoint), { method: 'DELETE', headers: routeHeaders(endpoint, false) })
       .then(function (res) {
         if (!res.ok) throw new Error('API error');
         return res.json();

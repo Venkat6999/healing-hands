@@ -1,6 +1,20 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
 
+  "outputDirectory": ".",
+
+  "rewrites": [
+    { "source": "/", "destination": "/pages/index.html" },
+    { "source": "/index.html", "destination": "/pages/index.html" },
+    { "source": "/about.html", "destination": "/pages/about.html" },
+    { "source": "/services.html", "destination": "/pages/services.html" },
+    { "source": "/what-we-treat.html", "destination": "/pages/what-we-treat.html" },
+    { "source": "/blog.html", "destination": "/pages/blog.html" },
+    { "source": "/faq.html", "destination": "/pages/faq.html" },
+    { "source": "/book-appointment.html", "destination": "/pages/book-appointment.html" },
+    { "source": "/admin.html", "destination": "/pages/admin.html" }
+  ],
+
   "headers": [
     {
       "source": "/(.*)",
@@ -8,6 +22,12 @@
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     }
   ]

@@ -68,6 +68,15 @@
     return h;
   }
 
+  /* The backend is a single Function at /api, so the logical route travels
+     in the X-HH-Route header instead of the URL. A header is used because
+     the image upload is multipart and has no body to carry metadata. */
+  function routeHeaders(endpoint, json) {
+    var h = headers(json);
+    h['X-HH-Route'] = endpoint;
+    return h;
+  }
+
   function apiDownMessage() {
     return 'Cannot reach the site editor server. In the project folder run "npm start" ' +
       'and open http://localhost:3000/admin.html (do not open admin.html as a file).';
@@ -77,9 +86,9 @@
     if (window.location.protocol === 'file:') {
       return Promise.reject(new Error(apiDownMessage()));
     }
-    return fetch(API + endpoint, {
+    return fetch(API, {
       method: method,
-      headers: headers(body !== undefined),
+      headers: routeHeaders(endpoint, body !== undefined),
       body: body !== undefined ? JSON.stringify(body) : undefined,
       cache: 'no-store'
     }).then(function (res) {
@@ -928,7 +937,7 @@
     var form = new FormData();
     form.append('photo', file);
     $('#upload-status').textContent = 'Uploading…';
-    fetch(API + '/upload', { method: 'POST', headers: headers(false), body: form })
+    fetch(API, { method: 'POST', headers: routeHeaders('/upload', false), body: form })
       .then(function (res) { return res.json(); })
       .then(function (data) {
         if (!data.url) throw new Error(data.error || 'Upload failed');
@@ -1031,7 +1040,7 @@
     try { token = sessionStorage.getItem(SESSION_KEY) || ''; } catch (err) { /* ignore */ }
     if (!token) return;
     state.token = token;
-    fetch(API + '/auth/check', { headers: headers(false) }).then(function (res) {
+    fetch(API, { headers: routeHeaders('/auth/check', false) }).then(function (res) {
       if (res.ok) startSession(token); else signOut();
     }).catch(function () { signOut(); });
   })();

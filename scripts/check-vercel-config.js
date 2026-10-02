@@ -1,96 +1,95 @@
-/* Guard the Express-on-Vercel requirements.
+/* Guard the deployment shape this project actually uses.
 
-   Vercel turns this project into a Function only if it can find the Express
-   entrypoint. Two things silently suppress that detection, and both did:
+   Three earlier deploy cycles failed for reasons that produced no build error,
+   so the build went green and the site served 404. Each of those is now
+   asserted here:
 
-     * a `build` script in package.json -- Vercel auto-runs it and takes the
-       static-build path, which expects a public/ output directory. There is
-       none, so the deployment succeeds and every URL returns 404.
-     * "framework": null in vercel.json -- explicitly declares that the project
-       has no framework, which stops Vercel detecting Express.
-
-   Vercel documents both as anti-patterns for an Express backend. This check
-   exists because the failure mode is silent: the build goes green and the site
-   404s, which is expensive to diagnose from the outside. */
+     * a `build` script is fine and expected here -- the project is served as
+       static files plus one Function, so a build command and an output
+       directory are correct. (They were only wrong for the Express-capture
+       approach that was abandoned.)
+     * outputDirectory must be ".", otherwise Vercel looks for public/ and
+       publishes nothing
+     * no `functions` block: its keys are glob patterns in which brackets are
+       a character class, which produced "doesn't match any Serverless
+       Functions" on two separate deploys
+     * exactly one Function must exist under api/, which keeps the deployment
+       inside the Hobby limit of 12
+     * every flat page URL needs a rewrite, because the markup lives in pages/
+     * server.js must not exist: it is superseded by api/index.js, and leaving
+       it in the repository means it gets deployed as a static file */
 const fs = require('fs');
 const path = require('path');
 const ROOT = path.join(__dirname, '..');
 
 const problems = [];
-const notes = [];
-
 const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
 const vercel = JSON.parse(fs.readFileSync(path.join(ROOT, 'vercel.json'), 'utf8'));
 
-/* 1. no `build` script */
-if (pkg.scripts && pkg.scripts.build) {
-  problems.push('package.json has a "build" script -- Vercel will run it and skip Express detection. ' +
-    'Rename it (it is "manifest" now).');
+/* the one Function */
+const apiFiles = fs.existsSync(path.join(ROOT, 'api'))
+  ? fs.readdirSync(path.join(ROOT, 'api')).filter((f) => f.endsWith('.js'))
+  : [];
+const functionCount = apiFiles.length + (fs.existsSync(path.join(ROOT, 'api', 'lib'))
+  ? fs.readdirSync(path.join(ROOT, 'api', 'lib')).filter((f) => f.endsWith('.js')).length
+  : 0);
+
+if (apiFiles.length !== 1 || !apiFiles.includes('index.js')) {
+  problems.push('api/ must contain exactly index.js -- found: ' + (apiFiles.join(', ') || 'nothing'));
+}
+if (functionCount > 12) {
+  problems.push('the Hobby plan allows 12 functions per deployment; api/ yields ' + functionCount);
 }
 
-/* 2. no framework: null */
-if (Object.prototype.hasOwnProperty.call(vercel, 'framework')) {
-  problems.push('vercel.json sets "framework" -- remove it so Vercel auto-detects Express ' +
-    'from the express dependency.');
+/* static output */
+if (vercel.outputDirectory !== '.') {
+  problems.push('vercel.json outputDirectory must be "." -- Vercel otherwise looks for public/ and publishes nothing');
+}
+if (!pkg.scripts || !pkg.scripts.build) {
+  problems.push('package.json needs a "build" script (the manifest generator) alongside outputDirectory');
 }
 
-/* 3. no rewrites needed for an Express backend */
-if (Array.isArray(vercel.rewrites) && vercel.rewrites.length) {
-  problems.push('vercel.json has rewrites -- an Express backend handles its own routing; ' +
-    'rewrites are unnecessary and can shadow routes.');
-}
-
-/* 4. no buildCommand needed */
-if (vercel.buildCommand) {
-  problems.push('vercel.json sets "buildCommand" -- remove it; Vercel builds the Function itself.');
-}
-
-/* 5. no functions block needed (and its globs are error-prone) */
+/* things that previously broke the build outright */
 if (vercel.functions && Object.keys(vercel.functions).length) {
-  problems.push('vercel.json has a "functions" block -- an Express app is a single Function; ' +
-    'its keys are globs and have caused build failures.');
+  problems.push('remove the "functions" block -- its keys are globs where brackets are a character class');
+}
+if (Object.prototype.hasOwnProperty.call(vercel, 'framework')) {
+  problems.push('remove "framework" from vercel.json -- detection is not used here and it suppresses routing');
+}
+if (vercel.buildCommand) {
+  problems.push('remove buildCommand from vercel.json -- package.json "build" is enough');
+}
+if (fs.existsSync(path.join(ROOT, 'server.js'))) {
+  problems.push('server.js must not exist -- it would be deployed as a static file; api/index.js replaced it');
 }
 
-/* things that must be present for detection */
-if (!pkg.dependencies || !pkg.dependencies.express) {
-  problems.push('express must be in package.json dependencies -- Vercel detects the framework from them.');
+/* every flat page URL needs a rewrite */
+const sources = (vercel.rewrites || []).map((r) => r.source);
+['/', '/index.html', '/about.html', '/services.html', '/what-we-treat.html',
+  '/blog.html', '/faq.html', '/book-appointment.html', '/admin.html']
+  .forEach((s) => { if (!sources.includes(s)) problems.push('vercel.json is missing a rewrite for ' + s); });
+
+/* the Function must read the route header the client sends */
+const idx = path.join(ROOT, 'api', 'index.js');
+if (fs.existsSync(idx)) {
+  const src = fs.readFileSync(idx, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
+  if (!/x-hh-route/i.test(src)) problems.push('api/index.js must read the x-hh-route header');
+  const client = fs.readFileSync(path.join(ROOT, 'js', 'site-data.js'), 'utf8');
+  if (!/X-HH-Route/.test(client)) problems.push('js/site-data.js must send X-HH-Route');
+  const admin = fs.readFileSync(path.join(ROOT, 'js', 'admin.js'), 'utf8');
+  if (!/X-HH-Route/.test(admin)) problems.push('js/admin.js must send X-HH-Route');
 }
 
-const entries = ['app', 'index', 'server', 'main', 'src/app', 'src/index', 'src/server', 'src/main'];
-const found = entries.filter((e) =>
-  ['.js', '.cjs', '.mjs', '.ts', '.cts', '.mts'].some((ext) =>
-    fs.existsSync(path.join(ROOT, e + ext))));
-if (!found.length) {
-  problems.push('no entrypoint file found (expected server.js at the project root)');
-} else {
-  notes.push('entrypoint: ' + found.join(', '));
-}
+console.log('\n=== deployment configuration ===\n');
+console.log(`  Functions: ${functionCount} (Hobby limit 12)`);
+console.log(`  api/:      ${apiFiles.join(', ') || 'nothing'}`);
+console.log(`  output:    ${vercel.outputDirectory}`);
+console.log(`  build:     ${(pkg.scripts || {}).build || 'none'}`);
 
-const serverFile = path.join(ROOT, 'server.js');
-if (fs.existsSync(serverFile)) {
-  // strip comments first: the explanatory comments in server.js mention the
-  // very patterns being checked for, and must not trigger a false positive
-  const src = fs.readFileSync(serverFile, 'utf8')
-    .replace(/\/\*[\s\S]*?\*\//g, '')
-    .replace(/^\s*\/\/.*$/gm, '');
-  if (!/require\(['"]express['"]\)|from ['"]express['"]/.test(src)) {
-    problems.push('server.js does not import express -- Vercel requires the entrypoint to import the framework.');
-  }
-  if (!/module\.exports\s*=\s*app|export default app/.test(src) && !/app\.listen\(/.test(src)) {
-    problems.push('server.js neither exports the app nor calls app.listen() -- Vercel cannot detect the server.');
-  }
-  if (/require\.main\s*===\s*module/.test(src)) {
-    problems.push('server.js guards listen() behind `require.main === module` -- Vercel imports the ' +
-      'file to detect the server, so the call never happens. Call listen() at module scope.');
-  }
-}
-
-console.log('\n=== Express-on-Vercel configuration ===\n');
-notes.forEach((n) => console.log('  ' + n));
 if (problems.length) {
   console.log('');
   problems.forEach((p) => console.log('  PROBLEM: ' + p));
-  console.log('\n  ' + problems.length + ' problem(s). Vercel would build successfully and serve 404s.\n');
+  console.log('\n  ' + problems.length + ' problem(s). These fail silently at build time.\n');
   process.exit(1);
 }
-console.log('  no blocking configuration problems found.\n');
+console.log('\n  no blocking configuration problems found.\n');
