@@ -793,6 +793,37 @@
             "label": "Button link — Book Consultation →"
           }
         ]
+      },
+      {
+        "id": "index-digital-partner",
+        "label": "Digital partner",
+        "fields": [
+          {
+            "key": "index.t125",
+            "type": "text",
+            "label": "Section label"
+          },
+          {
+            "key": "index.t126",
+            "type": "text",
+            "label": "Digital partner name"
+          },
+          {
+            "key": "index.img125",
+            "type": "image",
+            "label": "Digital partner logo"
+          },
+          {
+            "key": "index.href125",
+            "type": "text",
+            "label": "Digital partner website link"
+          },
+          {
+            "key": "index.img125alt",
+            "type": "text",
+            "label": "Logo description (alt text)"
+          }
+        ]
       }
     ]
   },

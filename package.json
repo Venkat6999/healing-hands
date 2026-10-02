@@ -9,7 +9,8 @@
     "dev": "node scripts/local-server.js",
     "seed": "node scripts/seed.js",
     "seed:force": "node scripts/seed.js --force",
-    "test": "node scripts/check-vercel-config.js && node scripts/check-cms-layer.js && node scripts/check-routes-http.js && node scripts/check-client-api.js && node scripts/test-api.js"
+    "test": "node scripts/check-vercel-config.js && node scripts/check-auth.js && node scripts/check-cms-layer.js && node scripts/check-routes-http.js && node scripts/check-client-api.js && node scripts/test-api.js",
+    "set-passcode": "node scripts/set-passcode.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.4",

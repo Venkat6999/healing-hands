@@ -60,6 +60,29 @@ const PAGES = ['/', '/index.html', '/about.html', '/services.html', '/what-we-tr
   '/blog.html', '/faq.html', '/book-appointment.html', '/admin.html'];
 
 (async () => {
+  /* Clear this test's own lockout first. The progressive lockout in
+     lib/auth.js means a previous failing run would otherwise make every later
+     run fail with 429 for up to 15 minutes and look like a regression.
+     Only rows belonging to the loopback test addresses are removed. */
+  try {
+    const fs = require('fs');
+    fs.readFileSync(path.join(ROOT, '.env'), 'utf8').split(/\r?\n/).forEach((line) => {
+      const m = /^\s*([A-Z0-9_]+)\s*=\s*(.+)$/.exec(line);
+      if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim();
+    });
+    const { createClient } = require(path.join(ROOT, 'node_modules', '@supabase', 'supabase-js'));
+    const sb = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY,
+      { auth: { persistSession: false } });
+    const { data } = await sb.from('login_attempts').select('client_key');
+    const mine = (data || []).map((r) => r.client_key)
+      .filter((k) => /127\.0\.0\.1|::1|203\.0\.113/.test(k));
+    if (mine.length) {
+      await sb.from('login_attempts').delete().in('client_key', mine);
+      console.log('\n  (cleared lockout for ' + mine.length + ' test key(s))');
+    }
+  } catch (e) {
+    console.log('\n  (could not clear the test lockout: ' + e.message + ')');
+  }
   const srv = spawn(process.execPath, [path.join(ROOT, 'scripts', 'local-server.js')], {
     cwd: ROOT, env: Object.assign({}, process.env, { PORT: String(PORT) }), stdio: 'ignore'
   });
@@ -97,7 +120,7 @@ const PAGES = ['/', '/index.html', '/about.html', '/services.html', '/what-we-tr
     line(bad2.status === 400, 'traversal route -> 400', `got ${bad2.status}`);
 
     console.log('\n=== sign-in and a full authenticated round trip ===');
-    const login = await req('POST', '/api', { route: '/auth/login', body: { passcode: process.env.HH_TEST_PASSCODE || 'healinghands2026' } });
+    const login = await req('POST', '/api', { route: '/auth/login', body: { passcode: (process.env.HH_TEST_PASSCODE || process.env.ADMIN_PASSCODE || '') } });
     line(login.status === 200 && !!login.body.token, 'POST /auth/login -> token', `got ${login.status}`);
     const token = login.body && login.body.token;
     if (token) {

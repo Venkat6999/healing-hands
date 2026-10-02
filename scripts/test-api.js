@@ -164,7 +164,7 @@ for (const [ep, expectKey] of [
     assert(attemptRows >= 1, 'lockout counter not persisted — in-memory regression');
   });
 
-  const passcode = process.env.HH_TEST_PASSCODE || 'healinghands2026';
+  const passcode = (process.env.HH_TEST_PASSCODE || process.env.ADMIN_PASSCODE || '');
   const login = await POST('/api/auth/login', { passcode });
   check('POST /api/auth/login -> token', () => {
     assert.strictEqual(login.status, 200, 'status ' + login.status + ' ' + JSON.stringify(login.body));

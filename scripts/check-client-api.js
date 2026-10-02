@@ -73,7 +73,7 @@ const line = (ok, label, extra) => {
     const loginRes = await fetch(BASE + '/api', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'X-HH-Route': '/auth/login' },
-      body: JSON.stringify({ passcode: process.env.HH_TEST_PASSCODE || 'healinghands2026' })
+      body: JSON.stringify({ passcode: (process.env.HH_TEST_PASSCODE || process.env.ADMIN_PASSCODE || '') })
     });
     const loginJson = await loginRes.json();
     line(loginRes.status === 200 && !!loginJson.token, 'sign in via /api with X-HH-Route', 'status ' + loginRes.status);

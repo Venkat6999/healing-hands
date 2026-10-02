@@ -247,7 +247,6 @@ const DEFAULTS = {
     hoursFull: 'Mon-Sat: 10:00 AM - 8:30 PM | Sun: 3:00 PM - 8:30 PM', hoursShort: 'Mon-Sat: 10:00 AM - 8:30 PM | Sun: 3:00 PM - 8:30 PM'
   },
   appointments: [],
-  passcode: 'healinghands2026'
 };
 
 // ---------- Generic editable resources ----------

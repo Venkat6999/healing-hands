@@ -3747,3 +3747,107 @@ main > section:first-child { padding-top: 0; }
   .stats-strip { grid-template-columns: 1fr; gap: 16px; }
   .stat-item h3 { font-size: 2rem; }
 }
+
+/* ============================================================
+   DIGITAL PARTNER
+   Two placements, both static content driven by the CMS:
+     .partner-block  inside the hero, below the Book Appointment button
+     .partner-pill   a pill directly above the footer
+   Both use the same four editable values, so the client only sets them once.
+   ============================================================ */
+.partner-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  margin-top: 26px;
+}
+.partner-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+}
+.partner-name {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+.partner-logo {
+  display: block;
+  height: 40px;
+  width: auto;
+  max-width: 170px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 8px;
+  padding: 5px 12px;
+}
+.partner-logo-link {
+  display: inline-block;
+  border-radius: 8px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+.partner-logo-link:hover,
+.partner-logo-link:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -12px rgba(0, 0, 0, 0.45);
+}
+.partner-logo-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ---------- the pill above the footer ---------- */
+.partner-pill-wrap {
+  background: var(--white);
+  padding: 30px 0;
+}
+.partner-pill {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 16px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  border: 1px solid var(--dark-divider);
+  border-radius: 999px;
+  background: var(--secondary);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.partner-pill-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+}
+.partner-pill-logo {
+  display: block;
+  height: 34px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+}
+.partner-pill-name {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+@media (max-width: 640px) {
+  .partner-block { margin-top: 20px; gap: 8px 12px; }
+  .partner-logo { height: 32px; padding: 4px 10px; }
+  .partner-name { font-size: 0.92rem; }
+  .partner-label { font-size: 0.64rem; }
+  .partner-pill-wrap { padding: 22px 0; }
+  .partner-pill { padding: 10px 18px; gap: 8px 12px; }
+  .partner-pill-logo { height: 28px; }
+  .partner-pill-name { font-size: 0.92rem; }
+}

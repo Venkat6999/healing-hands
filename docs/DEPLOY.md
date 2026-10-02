@@ -122,7 +122,7 @@ HH_TEST_PASSCODE=your-new-passcode npm test
 
 ## Step 6 — Change the admin passcode
 
-Default is `healinghands2026`. **Change it before going live**, in the admin
+There is no default passcode. Set `ADMIN_PASSCODE` in the Vercel environment variables before the first sign-in, then change it in the admin panel.
 panel under **Settings & backup** once the site is reachable (Step 9).
 Changing it in Supabase before first deploy is not possible — the panel is the
 intended route.

@@ -70,7 +70,6 @@ const PLAN = [
   { key: 'sectionCopy',  file: 'sectionCopy.json',  fallback: () => DEFAULTS.sectionCopy },
   { key: 'clinicInfo',   file: 'clinicInfo.json',   fallback: () => DEFAULTS.clinicInfo },
   { key: 'content',      file: 'content.json',      fallback: () => JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'content.default.json'), 'utf8')) },
-  { key: 'passcode',     file: 'passcode.json',     fallback: () => DEFAULTS.passcode }
 ];
 
 Object.keys(RESOURCES).forEach((name) => {

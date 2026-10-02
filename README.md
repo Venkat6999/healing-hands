@@ -22,7 +22,8 @@ npm run legacy    # old Express app on http://localhost:3000
 
 Admin panel: <http://localhost:3000/admin.html>
 
-Default passcode: `healinghands2026` — **change it in Settings & backup** on first login.
+There is no default passcode. Set `ADMIN_PASSCODE` as an environment variable before first use
+(the panel stores only its scrypt hash, and sign-in is refused until it is set).
 (The passcode is stored as a scrypt hash, never in plain text.)
 
 To work against Supabase instead:

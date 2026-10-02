@@ -103,6 +103,54 @@ if (fs.existsSync(jsDir)) {
   }
 }
 
+/* ---------- secrets must never be committed ----------
+   The default passcode used to be hard-coded in five places, three of them in
+   published documentation, which put it in the public repository. Nothing
+   sensitive may live in a tracked file now. */
+/* Built from fragments so this file does not itself contain the secret it
+   scans for, otherwise the scan would always flag itself. */
+const KNOWN_SECRETS = [['healing', 'hands', '2026'].join('')];
+const SCAN_EXT = ['.js', '.mjs', '.cjs', '.json', '.md', '.txt', '.html', '.sql', '.yml', '.yaml'];
+
+function walkForSecrets(dir, skip) {
+  const hits = [];
+  for (const entry of fs.readdirSync(path.join(ROOT, dir), { withFileTypes: true })) {
+    const rel = dir + '/' + entry.name;
+    if (skip.some((s) => rel.indexOf(s) === 0)) continue;
+    if (entry.isDirectory()) {
+      if (entry.name === 'node_modules' || entry.name === '.git' || entry.name === '.vercel') continue;
+      hits.push(...walkForSecrets(rel, skip));
+    } else if (SCAN_EXT.some((e) => entry.name.endsWith(e))) {
+      let text = '';
+      try { text = fs.readFileSync(path.join(ROOT, rel), 'utf8'); } catch (e) { continue; }
+      for (const secret of KNOWN_SECRETS) {
+        if (text.includes(secret)) hits.push(rel + ' contains a hard-coded passcode');
+      }
+    }
+  }
+  return hits;
+}
+problems.push(...walkForSecrets('.', ['/data/', '/uploads/']));
+
+/* the passcode must come from the environment */
+const authSrc = fs.existsSync(path.join(ROOT, 'lib', 'auth.js'))
+  ? fs.readFileSync(path.join(ROOT, 'lib', 'auth.js'), 'utf8') : '';
+if (authSrc && !/ADMIN_PASSCODE/.test(authSrc)) {
+  problems.push('lib/auth.js must read ADMIN_PASSCODE from the environment');
+}
+if (authSrc && !/status:\s*503/.test(authSrc)) {
+  problems.push('lib/auth.js must fail closed with 503 when no passcode is configured');
+}
+if (authSrc && !/SOFT_LIMIT/.test(authSrc)) {
+  problems.push('lib/auth.js should keep a progressive lockout (SOFT_LIMIT)');
+}
+if (!fs.existsSync(path.join(ROOT, '.env.example'))) {
+  problems.push('.env.example is missing');
+} else {
+  const ex = fs.readFileSync(path.join(ROOT, '.env.example'), 'utf8');
+  if (!/ADMIN_PASSCODE/.test(ex)) problems.push('.env.example must document ADMIN_PASSCODE');
+}
+
 console.log('\n=== deployment configuration ===\n');
 console.log(`  Functions: ${functionCount} (Hobby limit 12)`);
 console.log(`  api/:      ${apiFiles.join(', ') || 'nothing'}`);
