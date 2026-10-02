@@ -40,16 +40,10 @@ npm test          # exercise every API endpoint
 pages/                 the HTML pages
   index.html  about.html  services.html  what-we-treat.html
   blog.html   faq.html    book-appointment.html   admin.html
-api/                   the live backend, one Vercel Function per URL
-  version.js            /api/version
-  auth/login.js         /api/auth/login
-  appointments/[id].js  /api/appointments/<id>
-  ...25 files total
+server.js              the Express server -- Vercel captures it as ONE Function
 lib/                   shared backend code
-                        supabase · store · auth · validate · upload
-                        handler (the router every route file calls)
-                        (outside api/ so Vercel does not treat each
-                         module as its own Serverless Function)
+                        handler (the router), supabase, store, auth,
+                        validate, upload, defaults
 scripts/               build-image-manifest · seed · test-api
 supabase/schema.sql    database tables, RLS, storage bucket
 docs/                  DEPLOY.md · ADMIN-GUIDE.md

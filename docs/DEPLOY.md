@@ -234,10 +234,11 @@ vercel --prod && npm test
 | *"Server is not configured"* | env vars missing on Vercel | Step 9, then redeploy |
 | *"Cannot read the documents table"* | schema never ran | Step 2 |
 | Site shows default text, not your content | seed never ran | `npm run seed` |
-| 404 on a page | rewrite missing | check `vercel.json` rewrites |
+| 404 on a page | route missing | `npm test` checks every URL over real HTTP |
 | Images broken | `content.default.json` was excluded from the build | it must ship — see `.vercelignore` |
 | Build fails on `scripts/build-image-manifest.js` | `scripts/` was excluded | it is **not** in `.vercelignore`; do not add it |
 | 413 on image upload | over Vercel's 4 MB body limit | compress the image |
+| Function count error | one file per endpoint exceeds the Hobby limit of 12 | routes live in server.js, not api/ |
 
 ---
 
