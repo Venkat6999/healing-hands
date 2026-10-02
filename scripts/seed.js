@@ -34,8 +34,8 @@ function loadEnv() {
 loadEnv();
 
 const { createClient } = require('@supabase/supabase-js');
-const { RESOURCES, resourceDefault } = require('../api/lib/validate');
-const { DEFAULTS } = require('../api/lib/defaults');
+const { RESOURCES, resourceDefault } = require('../lib/validate');
+const { DEFAULTS } = require('../lib/defaults');
 
 const FORCE = process.argv.includes('--force');
 

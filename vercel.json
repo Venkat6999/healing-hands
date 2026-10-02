@@ -6,11 +6,11 @@
   "buildCommand": "npm run build",
 
   "functions": {
-    "api/[...path].js": {
+    "api/*.js": {
       "memory": 1024,
       "maxDuration": 30
     },
-    "api/uploads/[...path].js": {
+    "api/uploads/*.js": {
       "memory": 256,
       "maxDuration": 10
     }

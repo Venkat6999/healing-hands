@@ -3,7 +3,7 @@
    ------------------------------------------------------------
    The old /api/images endpoint walked ./images on disk at request
    time. A serverless function cannot do that, so the static images
-   are enumerated here at build time into api/lib/image-manifest.json.
+   are enumerated here at build time into lib/image-manifest.json.
 
    Run automatically by `npm run build` (and by postinstall) so it is
    always in sync before a Vercel build.
@@ -13,7 +13,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const IMAGES_DIR = path.join(ROOT, 'images');
-const OUT = path.join(__dirname, '..', 'api', 'lib', 'image-manifest.json');
+const OUT = path.join(__dirname, '..', 'lib', 'image-manifest.json');
 
 const IMAGE_RE = /\.(jpe?g|png|webp|gif|avif|svg)$/i;
 

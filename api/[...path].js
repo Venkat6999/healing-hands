@@ -7,17 +7,17 @@
    API_BASE = window.location.origin + '/api', so no page, script or
    style file needs to change.
    ============================================================ */
-const { getSupabase } = require('./lib/supabase');
-const store = require('./lib/store');
-const auth = require('./lib/auth');
-const upload = require('./lib/upload');
+const { getSupabase } = require('../lib/supabase');
+const store = require('../lib/store');
+const auth = require('../lib/auth');
+const upload = require('../lib/upload');
 const {
   DEFAULTS, defaultContent, contentSchemaJson
-} = require('./lib/defaults');
+} = require('../lib/defaults');
 const {
   RESOURCES, resourceDefault, validResource, validText, validContentList,
   uid, hashPasscode, verifyPasscode
-} = require('./lib/validate');
+} = require('../lib/validate');
 
 /* ---------- Response helpers ---------- */
 

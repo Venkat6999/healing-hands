@@ -42,7 +42,11 @@ pages/                 the HTML pages
   blog.html   faq.html    book-appointment.html   admin.html
 api/                   the live backend (Vercel functions)
   [...path].js           every /api route
-  lib/                   supabase · store · auth · validate · upload
+  uploads/[...path].js   /uploads/... -> Supabase Storage
+lib/                   shared backend code
+                        supabase · store · auth · validate · upload
+                        (outside api/ so Vercel does not treat each
+                         module as its own Serverless Function)
 scripts/               build-image-manifest · seed · test-api
 supabase/schema.sql    database tables, RLS, storage bucket
 docs/                  DEPLOY.md · ADMIN-GUIDE.md
