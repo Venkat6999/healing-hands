@@ -5,6 +5,8 @@
 node_modules/
 docs/
 legacy/
+supabase/
+*.md
 
 # --- secrets: must never reach the deployment ---
 .env
