@@ -1,0 +1,25 @@
+{
+  "cities": [
+    "Mulugu",
+    "Parkal",
+    "Bhupalpally",
+    "Mahabubabad",
+    "Jangaon",
+    "Warangal",
+    "Hanamkonda",
+    "Other"
+  ],
+  "treatments": [
+    "Basic Physiotherapy",
+    "Advanced Physiotherapy"
+  ],
+  "services": [
+    "Clinic Visit",
+    "Home Care Visit"
+  ],
+  "slots": [
+    "Morning",
+    "Afternoon",
+    "Evening"
+  ]
+}

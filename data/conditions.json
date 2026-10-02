@@ -1,0 +1,925 @@
+[
+  {
+    "id": "cond-001",
+    "name": "Lumbar Spondylosis",
+    "img": "images/services/Lumbar Spondylosis.png",
+    "symptoms": [
+      "Lower back pain",
+      "Stiffness in lower back",
+      "Pain radiating to legs",
+      "Numbness in legs",
+      "Difficulty standing for long"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-002",
+    "name": "Herniated Disk / Slipped Disc",
+    "img": "images/services/Herniated Disk - Slipped Disc.jpg",
+    "symptoms": [
+      "Severe back pain",
+      "Leg pain (sciatica)",
+      "Numbness or tingling",
+      "Muscle weakness",
+      "Pain worsens with sitting"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-003",
+    "name": "Sciatica",
+    "img": "images/services/Sciatica.webp",
+    "symptoms": [
+      "Pain radiating down leg",
+      "Lower back pain",
+      "Numbness in leg",
+      "Tingling sensation",
+      "Weakness in foot"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-004",
+    "name": "Disc Bulge",
+    "img": "images/services/Disc Bulge.webp",
+    "symptoms": [
+      "Back pain",
+      "Neck pain",
+      "Radiating pain",
+      "Muscle spasm",
+      "Reduced mobility"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-005",
+    "name": "Cervical Spondylosis",
+    "img": "images/services/Cervical Spondylosis.jpg",
+    "symptoms": [
+      "Neck pain",
+      "Stiffness",
+      "Headache",
+      "Shoulder pain",
+      "Numbness in arms"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-006",
+    "name": "Frozen Shoulder",
+    "img": "images/services/Frozen Shoulder.jpg",
+    "symptoms": [
+      "Shoulder pain",
+      "Limited range of motion",
+      "Stiffness",
+      "Pain at night",
+      "Difficulty reaching overhead"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-007",
+    "name": "Tennis Elbow",
+    "img": "images/services/Tennis Elbow.webp",
+    "symptoms": [
+      "Pain on outer elbow",
+      "Grip weakness",
+      "Pain with lifting",
+      "Burning sensation",
+      "Difficulty shaking hands"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-008",
+    "name": "Golfer's Elbow",
+    "img": "images/services/Golfer's Elbow.webp",
+    "symptoms": [
+      "Pain on inner elbow",
+      "Stiffness",
+      "Weakness in hands",
+      "Numbness in fingers",
+      "Pain with gripping"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-009",
+    "name": "Carpal Tunnel Syndrome",
+    "img": "images/services/Carpal Tunnel Syndrome.jpg",
+    "symptoms": [
+      "Numbness in fingers",
+      "Tingling in hand",
+      "Weakness in grip",
+      "Pain at night",
+      "Dropping objects"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-010",
+    "name": "Rotator Cuff Injury",
+    "img": "images/services/Rotator Cuff Injury.jpg",
+    "symptoms": [
+      "Shoulder pain",
+      "Weakness in arm",
+      "Limited range of motion",
+      "Pain when lying on side",
+      "Difficulty combing hair"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-011",
+    "name": "Shoulder Impingement",
+    "img": "images/services/Shoulder Impingement.png",
+    "symptoms": [
+      "Shoulder pain",
+      "Pain when lifting arm",
+      "Weakness",
+      "Pain at night",
+      "Clicking sound"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-012",
+    "name": "Shoulder Dislocation",
+    "img": "images/services/Shoulder Dislocation.jpg",
+    "symptoms": [
+      "Severe shoulder pain",
+      "Visible deformity",
+      "Inability to move arm",
+      "Swelling",
+      "Numbness"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-013",
+    "name": "Knee Osteoarthritis",
+    "img": "images/services/Knee Osteoarthritis.avif",
+    "symptoms": [
+      "Knee pain",
+      "Stiffness",
+      "Swelling",
+      "Reduced mobility",
+      "Creaking sound"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-014",
+    "name": "ACL Tear",
+    "img": "images/services/ACL Tear.webp",
+    "symptoms": [
+      "Popping sound",
+      "Severe knee pain",
+      "Swelling",
+      "Instability",
+      "Cannot bear weight"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-015",
+    "name": "Meniscal Injury",
+    "img": "images/services/Meniscal Injury.webp",
+    "symptoms": [
+      "Knee pain",
+      "Swelling",
+      "Locking of knee",
+      "Clicking",
+      "Difficulty straightening leg"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-016",
+    "name": "Patellar Tendonitis",
+    "img": "images/services/Patellar Tendonitis.webp",
+    "symptoms": [
+      "Pain below kneecap",
+      "Swelling",
+      "Pain with jumping",
+      "Tenderness",
+      "Weakness in leg"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-017",
+    "name": "Plantar Fasciitis",
+    "img": "images/services/Plantar Fasciitis.webp",
+    "symptoms": [
+      "Heel pain",
+      "Pain with first steps",
+      "Stiffness",
+      "Pain after sitting",
+      "Burning sensation"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-018",
+    "name": "Ankle Sprain",
+    "img": "images/services/Ankle Sprain.jpg",
+    "symptoms": [
+      "Ankle pain",
+      "Swelling",
+      "Bruising",
+      "Instability",
+      "Difficulty walking"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-019",
+    "name": "Flat Foot",
+    "img": "images/services/Flat Foot.jpg",
+    "symptoms": [
+      "Foot pain",
+      "Arch pain",
+      "Fatigue in feet",
+      "Knee pain",
+      "Back pain"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-020",
+    "name": "Hamstring Strain",
+    "img": "images/services/Hamstring Strain.jpg",
+    "symptoms": [
+      "Back of thigh pain",
+      "Muscle spasm",
+      "Swelling",
+      "Difficulty walking",
+      "Bruising"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-021",
+    "name": "Back Pain",
+    "img": "images/services/Back Pain.jpg",
+    "symptoms": [
+      "Muscle ache",
+      "Shooting pain",
+      "Stiffness",
+      "Pain radiating to legs",
+      "Difficulty standing"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-022",
+    "name": "Neck Pain",
+    "img": "images/services/Neck Pain.webp",
+    "symptoms": [
+      "Neck stiffness",
+      "Headache",
+      "Radiating pain",
+      "Reduced range of motion",
+      "Shoulder pain"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-023",
+    "name": "Osteoarthritis",
+    "img": "images/services/Osteoarthritis.png",
+    "symptoms": [
+      "Joint pain",
+      "Stiffness",
+      "Swelling",
+      "Reduced mobility",
+      "Creaking sound"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-024",
+    "name": "Rheumatoid Arthritis",
+    "img": "images/services/Rheumatoid Arthritis.jpg",
+    "symptoms": [
+      "Joint swelling",
+      "Morning stiffness",
+      "Joint pain",
+      "Fatigue",
+      "Deformity"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-025",
+    "name": "Scoliosis",
+    "img": "images/services/Scoliosis.webp",
+    "symptoms": [
+      "Uneven shoulders",
+      "Back pain",
+      "One shoulder blade prominent",
+      "Uneven waist",
+      "Fatigue"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-026",
+    "name": "Spondylolisthesis",
+    "img": "images/services/Spondylolisthesis.webp",
+    "symptoms": [
+      "Lower back pain",
+      "Tight hamstrings",
+      "Pain radiating to legs",
+      "Difficulty standing",
+      "Stiffness"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-027",
+    "name": "Spinal Stenosis",
+    "img": "images/services/Spinal Stenosis.webp",
+    "symptoms": [
+      "Back pain",
+      "Numbness in legs",
+      "Weakness",
+      "Pain when walking",
+      "Cramping"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-028",
+    "name": "Osteoporosis",
+    "img": "images/services/Osteoporosis.jpg",
+    "symptoms": [
+      "Back pain",
+      "Loss of height",
+      "Stooped posture",
+      "Fractures easily",
+      "Breathing difficulty"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-029",
+    "name": "Whiplash",
+    "img": "images/services/Whiplash.webp",
+    "symptoms": [
+      "Neck pain",
+      "Stiffness",
+      "Headache",
+      "Dizziness",
+      "Shoulder pain"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-030",
+    "name": "Piriformis Syndrome",
+    "img": "images/services/Piriformis Syndrome.webp",
+    "symptoms": [
+      "Buttock pain",
+      "Pain radiating to leg",
+      "Pain when sitting",
+      "Hip pain",
+      "Tingling in leg"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-031",
+    "name": "Bell's Palsy / Facial Palsy",
+    "img": "images/services/Bell's Palsy - Facial Palsy.webp",
+    "symptoms": [
+      "Facial drooping",
+      "Difficulty closing eye",
+      "Loss of taste",
+      "Drooling",
+      "Pain behind ear"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-032",
+    "name": "Parkinson's Disease",
+    "img": "images/services/Parkinson's Disease.jpg",
+    "symptoms": [
+      "Tremors",
+      "Slow movement",
+      "Stiffness",
+      "Balance problems",
+      "Speech changes"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-033",
+    "name": "Stroke / CVA",
+    "img": "images/services/Stroke -CVA.webp",
+    "symptoms": [
+      "Weakness on one side",
+      "Difficulty speaking",
+      "Balance problems",
+      "Vision changes",
+      "Numbness"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-034",
+    "name": "Cerebral Palsy",
+    "img": "images/services/Cerebral Palsy.jpg",
+    "symptoms": [
+      "Muscle stiffness",
+      "Poor coordination",
+      "Weakness",
+      "Tremors",
+      "Difficulty walking"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-035",
+    "name": "Multiple Sclerosis",
+    "img": "images/services/Multiple Sclerosis.jpg",
+    "symptoms": [
+      "Numbness",
+      "Vision problems",
+      "Fatigue",
+      "Balance issues",
+      "Muscle weakness"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-036",
+    "name": "Spinal Cord Injury",
+    "img": "images/services/Spinal Cord Injury.webp",
+    "symptoms": [
+      "Paralysis",
+      "Loss of sensation",
+      "Muscle spasm",
+      "Breathing difficulty",
+      "Loss of bladder control"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-037",
+    "name": "Trigger Finger",
+    "img": "images/services/Trigger Finger.jpg",
+    "symptoms": [
+      "Finger locking",
+      "Clicking sensation",
+      "Finger stiffness",
+      "Pain in finger",
+      "Nodule in palm"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-038",
+    "name": "De Quervain's Tenosynovitis",
+    "img": "images/services/De Quervain's Tenosynovitis.webp",
+    "symptoms": [
+      "Pain at base of thumb",
+      "Swelling",
+      "Difficulty gripping",
+      "Pain with pinching",
+      "Stiffness"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-039",
+    "name": "Ganglion Cyst",
+    "img": "images/services/Ganglion Cyst.webp",
+    "symptoms": [
+      "Visible lump",
+      "Pain",
+      "Tingling",
+      "Weakness in affected area",
+      "Discomfort with movement"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-040",
+    "name": "Mallet Finger",
+    "img": "images/services/Mallet Finger.jpg",
+    "symptoms": [
+      "Drooping fingertip",
+      "Pain",
+      "Swelling",
+      "Bruising",
+      "Inability to straighten finger"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-041",
+    "name": "Boutonniere Deformity",
+    "img": "images/services/Boutonniere Deformity.webp",
+    "symptoms": [
+      "Finger deformity",
+      "Pain",
+      "Swelling",
+      "Inability to straighten finger",
+      "Stiffness"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-042",
+    "name": "Cubital Tunnel Syndrome",
+    "img": "images/services/Cubital Tunnel Syndrome.webp",
+    "symptoms": [
+      "Numbness in ring/pinky fingers",
+      "Elbow pain",
+      "Weakness in grip",
+      "Tingling",
+      "Muscle wasting"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-043",
+    "name": "Biceps Tendonitis",
+    "img": "images/services/Biceps Tendonitis.webp",
+    "symptoms": [
+      "Front shoulder pain",
+      "Pain with lifting",
+      "Swelling",
+      "Weakness",
+      "Clicking sensation"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-044",
+    "name": "Wrist Drop",
+    "img": "images/services/Wrist Drop.webp",
+    "symptoms": [
+      "Inability to extend wrist",
+      "Weakness",
+      "Numbness",
+      "Difficulty gripping",
+      "Hand deformity"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-045",
+    "name": "Meralgia Paresthetica",
+    "img": "images/services/Meralgia Paresthetica.webp",
+    "symptoms": [
+      "Numbness in outer thigh",
+      "Burning pain",
+      "Tingling",
+      "Hypersensitivity",
+      "Pain when walking"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-046",
+    "name": "Tendinitis",
+    "img": "images/services/Tendinitis.jpg",
+    "symptoms": [
+      "Pain along tendon",
+      "Swelling",
+      "Tenderness",
+      "Stiffness",
+      "Pain with movement"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-047",
+    "name": "Diabetic Neuropathy",
+    "img": "images/services/Diabetic Neuropathy.webp",
+    "symptoms": [
+      "Numbness in feet",
+      "Tingling",
+      "Burning pain",
+      "Loss of balance",
+      "Foot ulcers"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-048",
+    "name": "Hip Osteoarthritis",
+    "img": "images/services/Hip Osteoarthritis.jpg",
+    "symptoms": [
+      "Hip pain",
+      "Stiffness",
+      "Difficulty walking",
+      "Pain with stairs",
+      "Limping"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-049",
+    "name": "Hip Labral Tear",
+    "img": "images/services/Hip Labral Tear.jpeg",
+    "symptoms": [
+      "Hip pain",
+      "Clicking in hip",
+      "Stiffness",
+      "Locking sensation",
+      "Limited range of motion"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-050",
+    "name": "Trochanteric Bursitis",
+    "img": "images/services/Trochanteric Bursitis.jpg",
+    "symptoms": [
+      "Pain on outer hip",
+      "Pain when lying on side",
+      "Swelling",
+      "Tenderness",
+      "Pain with walking"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-051",
+    "name": "Total Knee Replacement (TKR)",
+    "img": "images/services/Total Knee Replacement (TKR).webp",
+    "symptoms": [
+      "Post-surgical pain",
+      "Stiffness",
+      "Swelling",
+      "Difficulty walking",
+      "Limited range of motion"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-052",
+    "name": "Total Hip Replacement (THR)",
+    "img": "images/services/Total Hip Replacement (THR).webp",
+    "symptoms": [
+      "Post-surgical pain",
+      "Stiffness",
+      "Difficulty walking",
+      "Swelling",
+      "Limited range of motion"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-053",
+    "name": "Knee Bursitis",
+    "img": "images/services/Knee Bursitis.webp",
+    "symptoms": [
+      "Swelling around knee",
+      "Pain",
+      "Tenderness",
+      "Redness",
+      "Difficulty bending knee"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-054",
+    "name": "Chondromalacia Patella",
+    "img": "images/services/Chondromalacia Patella.webp",
+    "symptoms": [
+      "Knee pain",
+      "Grinding sensation",
+      "Stiffness",
+      "Pain with stairs",
+      "Swelling"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-055",
+    "name": "Patella Dislocation",
+    "img": "images/services/Patella Dislocation.webp",
+    "symptoms": [
+      "Visible deformity",
+      "Severe pain",
+      "Swelling",
+      "Inability to straighten knee",
+      "Instability"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-056",
+    "name": "Genu Valgum",
+    "img": "images/services/Genu Valgum.jpg",
+    "symptoms": [
+      "Knock-knee appearance",
+      "Knee pain",
+      "Difficulty walking",
+      "Ankle pain",
+      "Fatigue"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-057",
+    "name": "Genu Varum",
+    "img": "images/services/Genu Varum.jpg",
+    "symptoms": [
+      "Bowed legs",
+      "Knee pain",
+      "Difficulty walking",
+      "Ankle pain",
+      "Fatigue"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-058",
+    "name": "Osgood-Schlatter Disease",
+    "img": "images/services/Osgood-Schlatter Disease.jpg",
+    "symptoms": [
+      "Pain below kneecap",
+      "Swelling",
+      "Tenderness",
+      "Pain with activity",
+      "Limping"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-059",
+    "name": "Torticollis",
+    "img": "images/services/Torticollis.jpg",
+    "symptoms": [
+      "Neck stiffness",
+      "Head tilting",
+      "Difficulty turning head",
+      "Shoulder pain",
+      "Neck pain"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-060",
+    "name": "Ankylosing Spondylitis",
+    "img": "images/services/Ankylosing Spondylitis.jpg",
+    "symptoms": [
+      "Back pain and stiffness",
+      "Morning stiffness",
+      "Fatigue",
+      "Reduced spinal mobility",
+      "Hip pain"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-061",
+    "name": "Cauda Equina Syndrome",
+    "img": "images/services/Cauda Equina Syndrome.webp",
+    "symptoms": [
+      "Severe back pain",
+      "Bladder dysfunction",
+      "Numbness in saddle area",
+      "Leg weakness",
+      "Loss of sensation"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-062",
+    "name": "Degenerative Disc Disease",
+    "img": "images/services/Degenerative Disc Disease.webp",
+    "symptoms": [
+      "Chronic back pain",
+      "Pain worsens with sitting",
+      "Stiffness",
+      "Radiating pain",
+      "Fatigue"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-063",
+    "name": "Asthma",
+    "img": "images/services/Asthma.jpg",
+    "symptoms": [
+      "Shortness of breath",
+      "Wheezing",
+      "Chest tightness",
+      "Coughing",
+      "Difficulty breathing"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-064",
+    "name": "Varicose Veins",
+    "img": "images/services/Varicose Veins.webp",
+    "symptoms": [
+      "Swollen veins",
+      "Leg pain",
+      "Heaviness",
+      "Burning sensation",
+      "Cramping"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-065",
+    "name": "Deep Venous Thrombosis",
+    "img": "images/services/Deep Venous Thrombosis.jpg",
+    "symptoms": [
+      "Leg swelling",
+      "Leg pain",
+      "Warmth in leg",
+      "Redness",
+      "Tenderness"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-066",
+    "name": "Lymphedema",
+    "img": "images/services/Lymphedema.png",
+    "symptoms": [
+      "Swelling in limbs",
+      "Heaviness",
+      "Restricted movement",
+      "Skin changes",
+      "Recurring infections"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-067",
+    "name": "Fibromyalgia Syndrome",
+    "img": "images/services/Fibromyalgia Syndrome.png",
+    "symptoms": [
+      "Widespread pain",
+      "Fatigue",
+      "Sleep problems",
+      "Cognitive difficulties",
+      "Morning stiffness"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-068",
+    "name": "Concussion",
+    "img": "images/services/Concussion.webp",
+    "symptoms": [
+      "Headache",
+      "Dizziness",
+      "Confusion",
+      "Memory problems",
+      "Nausea"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-069",
+    "name": "Temporomandibular Joint (TMJ)",
+    "img": "images/services/Temporomandibular Joint (TMJ).webp",
+    "symptoms": [
+      "Jaw pain",
+      "Clicking in jaw",
+      "Difficulty chewing",
+      "Headache",
+      "Locking jaw"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-070",
+    "name": "Vertigo",
+    "img": "images/services/Vertigo.jpg",
+    "symptoms": [
+      "Dizziness",
+      "Spinning sensation",
+      "Nausea",
+      "Balance problems",
+      "Hearing changes"
+    ],
+    "visible": true
+  },
+  {
+    "id": "cond-071",
+    "name": "Migraine",
+    "img": "images/services/Migraine.jpg",
+    "symptoms": [
+      "Severe headache",
+      "Nausea",
+      "Light sensitivity",
+      "Aura",
+      "Pulsating pain"
+    ],
+    "visible": true
+  }
+]

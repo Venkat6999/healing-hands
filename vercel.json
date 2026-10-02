@@ -1,0 +1,55 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+
+  "framework": null,
+
+  "buildCommand": "npm run build",
+
+  "functions": {
+    "api/[...path].js": {
+      "memory": 1024,
+      "maxDuration": 30
+    },
+    "api/uploads/[...path].js": {
+      "memory": 256,
+      "maxDuration": 10
+    }
+  },
+
+  "rewrites": [
+    { "source": "/", "destination": "/pages/index.html" },
+    { "source": "/index.html", "destination": "/pages/index.html" },
+    { "source": "/about.html", "destination": "/pages/about.html" },
+    { "source": "/services.html", "destination": "/pages/services.html" },
+    { "source": "/what-we-treat.html", "destination": "/pages/what-we-treat.html" },
+    { "source": "/blog.html", "destination": "/pages/blog.html" },
+    { "source": "/faq.html", "destination": "/pages/faq.html" },
+    { "source": "/book-appointment.html", "destination": "/pages/book-appointment.html" },
+    { "source": "/admin.html", "destination": "/pages/admin.html" },
+    { "source": "/uploads/:path*", "destination": "/api/uploads/:path*" }
+  ],
+
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*).(css|js)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    }
+  ]
+}

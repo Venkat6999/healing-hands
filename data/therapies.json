@@ -1,0 +1,112 @@
+{
+  "groups": [
+    {
+      "id": "basic",
+      "title": "Basic Therapies",
+      "tag": "Basic therapies",
+      "intro": "Electrotherapy and thermal modalities — the foundation of treatment at the clinic, often used on their own or combined in a session.",
+      "visible": true,
+      "items": [
+        {
+          "id": "bas-1",
+          "name": "Interferential Therapy (IFT)",
+          "description": "One of the types of electrotherapy used for the management of pain, muscle spasms and inflammation through deep tissue stimulation.",
+          "visible": true
+        },
+        {
+          "id": "bas-2",
+          "name": "Ultrasound Therapy (US)",
+          "description": "Deep heat produced by sound waves, used to reduce pain and stiffness and to support the healing of soft tissue.",
+          "visible": true
+        },
+        {
+          "id": "bas-3",
+          "name": "Transcutaneous Electrical Nerve Stimulation (TENS)",
+          "description": "Mild electrical pulses applied over the painful area to help reduce pain without affecting sensation.",
+          "visible": true
+        },
+        {
+          "id": "bas-4",
+          "name": "Electrical Muscle Stimulation (EMS)",
+          "description": "Mild electrical pulses used to stimulate and re-activate weakened muscles and improve circulation.",
+          "visible": true
+        },
+        {
+          "id": "bas-5",
+          "name": "Infrared Radiation (IRR)",
+          "description": "Superficial radiant heat used to relax tight muscles and ease stiffness before hands-on treatment.",
+          "visible": true
+        },
+        {
+          "id": "bas-6",
+          "name": "Hydrocollator Packs",
+          "description": "Hot packs wrapped in warm moist towels, a classic modality for easing muscle spasm and joint stiffness.",
+          "visible": true
+        },
+        {
+          "id": "bas-7",
+          "name": "Cervical & Lumbar Traction Therapy",
+          "description": "Carefully controlled pulling force to reduce pressure on the spine and ease neck and lower back pain.",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "advanced",
+      "title": "Advanced Therapies",
+      "tag": "Advanced therapies",
+      "intro": "Hands-on and specialised techniques used for targeted treatment, deeper tissue work and more complex conditions.",
+      "visible": true,
+      "items": [
+        {
+          "id": "adv-1",
+          "name": "Cupping Therapy",
+          "description": "An ancient healing practice with a strong place in modern physiotherapy — used for pain relief, muscle recovery and improving blood flow.",
+          "visible": true
+        },
+        {
+          "id": "adv-2",
+          "name": "Dry Needle Therapy",
+          "description": "Also known as Trigger Point Dry Needling — a procedure using thin needles to release myofascial trigger points and relieve muscle pain.",
+          "visible": true
+        },
+        {
+          "id": "adv-3",
+          "name": "Taping Therapy / Kinesio Taping",
+          "description": "Elastic therapeutic tape applied over the skin to support movement, reduce pain and control swelling.",
+          "visible": true
+        },
+        {
+          "id": "adv-4",
+          "name": "Manual Therapy",
+          "description": "Hands-on techniques including joint mobilisation, manipulation and soft tissue work to restore movement and reduce pain.",
+          "visible": true
+        },
+        {
+          "id": "adv-5",
+          "name": "Pelvic Floor Physical Therapy",
+          "description": "Specialised assessment and treatment for pelvic floor muscle weakness, pain and bladder or bowel dysfunction.",
+          "visible": true
+        },
+        {
+          "id": "adv-6",
+          "name": "Myofascial Release (MFR)",
+          "description": "Gentle sustained pressure on tight bands in the fascia to release restriction and restore movement.",
+          "visible": true
+        },
+        {
+          "id": "adv-7",
+          "name": "Positional Release Technique",
+          "description": "Positioning a painful muscle in a shortened, comfortable position so it relaxes and the trigger point settles.",
+          "visible": true
+        },
+        {
+          "id": "adv-8",
+          "name": "Soft Tissue Mobilization",
+          "description": "Manual work on muscles and fascia to break down adhesions, improve mobility and reduce muscle pain.",
+          "visible": true
+        }
+      ]
+    }
+  ]
+}

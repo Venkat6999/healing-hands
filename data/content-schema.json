@@ -1,0 +1,2883 @@
+[
+  {
+    "page": "index",
+    "file": "index.html",
+    "label": "Home",
+    "groups": [
+      {
+        "id": "index-g1",
+        "label": "Top bar",
+        "fields": [
+          {
+            "key": "index.t1",
+            "type": "text",
+            "label": "Clinic hours:"
+          },
+          {
+            "key": "index.t2",
+            "type": "text",
+            "label": "FAQ"
+          }
+        ]
+      },
+      {
+        "id": "index-g2",
+        "label": "Header — Header / navigation",
+        "fields": [
+          {
+            "key": "index.img3",
+            "type": "image",
+            "label": "Image — Healing Hands Advanced Physiotherapy Cl…"
+          },
+          {
+            "key": "index.img3alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "index.t4",
+            "type": "text",
+            "label": "Healing Hands"
+          },
+          {
+            "key": "index.t5",
+            "type": "text",
+            "label": "Advanced Physiotherapy Clinic"
+          },
+          {
+            "key": "index.t6",
+            "type": "text",
+            "label": "Home"
+          },
+          {
+            "key": "index.t7",
+            "type": "text",
+            "label": "About Us"
+          },
+          {
+            "key": "index.t8",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "index.t9",
+            "type": "text",
+            "label": "What We Treat"
+          },
+          {
+            "key": "index.t10",
+            "type": "text",
+            "label": "Blog"
+          },
+          {
+            "key": "index.t11",
+            "type": "text",
+            "label": "FAQ"
+          },
+          {
+            "key": "index.t12",
+            "type": "text",
+            "label": "Book Appointment"
+          },
+          {
+            "key": "index.t13",
+            "type": "text",
+            "label": "Our Services"
+          },
+          {
+            "key": "index.href14",
+            "type": "text",
+            "label": "Button link — Our Services"
+          },
+          {
+            "key": "index.t15",
+            "type": "text",
+            "label": "Book Appointment"
+          },
+          {
+            "key": "index.href16",
+            "type": "text",
+            "label": "Button link — Book Appointment"
+          }
+        ]
+      },
+      {
+        "id": "index-g3",
+        "label": "Better movement.Better recovery. Better life.",
+        "fields": [
+          {
+            "key": "index.img17",
+            "type": "image",
+            "label": "Image — Rehabilitation exercise area at Healing…"
+          },
+          {
+            "key": "index.img17alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "index.t18",
+            "type": "text",
+            "label": "Advanced physiotherapy in Hanamkonda"
+          },
+          {
+            "key": "index.t19",
+            "type": "textarea",
+            "label": "Personalised, hands-on physiotherapy for pain management, better move…"
+          },
+          {
+            "key": "index.href20",
+            "type": "text",
+            "label": "Button link — Book Appointment →"
+          },
+          {
+            "key": "index.t21",
+            "type": "text",
+            "label": "Explore care"
+          }
+        ]
+      },
+      {
+        "id": "index-g4",
+        "label": "In-clinic treatment",
+        "fields": [
+          {
+            "key": "index.t22",
+            "type": "text",
+            "label": "In-clinic treatment"
+          },
+          {
+            "key": "index.t23",
+            "type": "text",
+            "label": "Fully equipped treatment rooms for electrotherapy, manual therapy and…"
+          },
+          {
+            "key": "index.t24",
+            "type": "text",
+            "label": "Qualified physiotherapists"
+          },
+          {
+            "key": "index.t25",
+            "type": "text",
+            "label": "Care led by qualified physiotherapists with specialised manual therap…"
+          },
+          {
+            "key": "index.t26",
+            "type": "text",
+            "label": "Structured recovery plans"
+          },
+          {
+            "key": "index.t27",
+            "type": "text",
+            "label": "Clear treatment plans with defined sessions, so you know what to expe…"
+          }
+        ]
+      },
+      {
+        "id": "index-g5",
+        "label": "Find the right physiotherapy for you",
+        "fields": [
+          {
+            "key": "index.bg28",
+            "type": "image",
+            "label": "Background image"
+          },
+          {
+            "key": "index.href29",
+            "type": "text",
+            "label": "Button link — Explore All Services →"
+          }
+        ]
+      },
+      {
+        "id": "index-g6",
+        "label": "Conditions we treat",
+        "fields": [
+          {
+            "key": "index.bg30",
+            "type": "image",
+            "label": "Background image"
+          },
+          {
+            "key": "index.t31",
+            "type": "text",
+            "label": "What we treat"
+          },
+          {
+            "key": "index.t32",
+            "type": "text",
+            "label": "Conditions we treat"
+          },
+          {
+            "key": "index.t33",
+            "type": "textarea",
+            "label": "We treat a wide range of neurological, orthopaedic, musculoskeletal, …"
+          },
+          {
+            "key": "index.href34",
+            "type": "text",
+            "label": "Button link — View All Services →"
+          }
+        ]
+      },
+      {
+        "id": "index-g7",
+        "label": "The physiotherapists behind your care",
+        "fields": [
+          {
+            "key": "index.bg35",
+            "type": "image",
+            "label": "Background image"
+          }
+        ]
+      },
+      {
+        "id": "index-g8",
+        "label": "A quiet, well-equipped space for treatment",
+        "fields": [
+          {
+            "key": "index.t36",
+            "type": "text",
+            "label": "Inside the clinic"
+          },
+          {
+            "key": "index.t37",
+            "type": "text",
+            "label": "A quiet, well-equipped space for treatment"
+          },
+          {
+            "key": "index.img38",
+            "type": "image",
+            "label": "Image — Healing Hands clinic building exterior …"
+          },
+          {
+            "key": "index.img38alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "index.t39",
+            "type": "text",
+            "label": "Our clinic building, Hanamkonda"
+          },
+          {
+            "key": "index.img40",
+            "type": "image",
+            "label": "Image — Electrotherapy and traction treatment r…"
+          },
+          {
+            "key": "index.img40alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "index.t41",
+            "type": "text",
+            "label": "Electrotherapy & traction room"
+          },
+          {
+            "key": "index.img42",
+            "type": "image",
+            "label": "Image — Rehabilitation exercise area with paral…"
+          },
+          {
+            "key": "index.img42alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "index.t43",
+            "type": "text",
+            "label": "Rehab exercise area"
+          },
+          {
+            "key": "index.img44",
+            "type": "image",
+            "label": "Image — Treatment room with two therapy beds"
+          },
+          {
+            "key": "index.img44alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "index.t45",
+            "type": "text",
+            "label": "Treatment room"
+          },
+          {
+            "key": "index.img46",
+            "type": "image",
+            "label": "Image — Reception desk at Healing Hands clinic"
+          },
+          {
+            "key": "index.img46alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "index.t47",
+            "type": "text",
+            "label": "Reception"
+          },
+          {
+            "key": "index.img48",
+            "type": "image",
+            "label": "Image — Additional treatment room"
+          },
+          {
+            "key": "index.img48alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "index.t49",
+            "type": "text",
+            "label": "Consultation room"
+          }
+        ]
+      },
+      {
+        "id": "index-g9",
+        "label": "Real patient sessions at our clinic",
+        "fields": [
+          {
+            "key": "index.bg50",
+            "type": "image",
+            "label": "Background image"
+          },
+          {
+            "key": "index.t51",
+            "type": "text",
+            "label": "Treatments in action"
+          },
+          {
+            "key": "index.t52",
+            "type": "text",
+            "label": "Real patient sessions at our clinic"
+          },
+          {
+            "key": "index.t53",
+            "type": "textarea",
+            "label": "Cupping therapy and dry needling sessions carried out by our physioth…"
+          },
+          {
+            "key": "index.img54",
+            "type": "image",
+            "label": "Image — Patient receiving cupping therapy on th…"
+          },
+          {
+            "key": "index.img54alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "index.t55",
+            "type": "text",
+            "label": "Cupping therapy for neck & upper back tightness"
+          },
+          {
+            "key": "index.img56",
+            "type": "image",
+            "label": "Image — Patient receiving dry needling at the n…"
+          },
+          {
+            "key": "index.img56alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "index.t57",
+            "type": "text",
+            "label": "Dry needling for neck pain"
+          }
+        ]
+      },
+      {
+        "id": "index-g10",
+        "label": "Stay updated with physio insights",
+        "fields": [
+          {
+            "key": "index.t58",
+            "type": "text",
+            "label": "Latest blogs"
+          },
+          {
+            "key": "index.t59",
+            "type": "text",
+            "label": "Stay updated with physio insights"
+          },
+          {
+            "key": "index.t60",
+            "type": "textarea",
+            "label": "Expert tips, recovery guides and the latest trends in physiotherapy —…"
+          },
+          {
+            "key": "index.img61",
+            "type": "image",
+            "label": "Image — Physiotherapy treatment session"
+          },
+          {
+            "key": "index.img61alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "index.t62",
+            "type": "text",
+            "label": "Sep 2026"
+          },
+          {
+            "key": "index.t63",
+            "type": "text",
+            "label": "Why Do Your Knees Hurt While Climbing Stairs?"
+          },
+          {
+            "key": "index.t64",
+            "type": "text",
+            "label": "Causes and physiotherapy treatment options for knee pain during stair…"
+          },
+          {
+            "key": "index.t65",
+            "type": "text",
+            "label": "Read More →"
+          },
+          {
+            "key": "index.img66",
+            "type": "image",
+            "label": "Image — Rehabilitation exercise area"
+          },
+          {
+            "key": "index.img66alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "index.t67",
+            "type": "text",
+            "label": "Sep 2026"
+          },
+          {
+            "key": "index.t68",
+            "type": "text",
+            "label": "Sitting Too Long Making You Stiff?"
+          },
+          {
+            "key": "index.t69",
+            "type": "text",
+            "label": "Understand the cause and learn how physiotherapy can help with desk-j…"
+          },
+          {
+            "key": "index.t70",
+            "type": "text",
+            "label": "Read More →"
+          },
+          {
+            "key": "index.img71",
+            "type": "image",
+            "label": "Image — Physiotherapy consultation"
+          },
+          {
+            "key": "index.img71alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "index.t72",
+            "type": "text",
+            "label": "Sep 2026"
+          },
+          {
+            "key": "index.t73",
+            "type": "text",
+            "label": "Why Does Your Tailbone Hurt After Sitting?"
+          },
+          {
+            "key": "index.t74",
+            "type": "text",
+            "label": "Common causes of coccydynia and how targeted physiotherapy can reliev…"
+          },
+          {
+            "key": "index.t75",
+            "type": "text",
+            "label": "Read More →"
+          },
+          {
+            "key": "index.href76",
+            "type": "text",
+            "label": "Button link — View All Blogs →"
+          },
+          {
+            "key": "index.t77",
+            "type": "text",
+            "label": "FAQ"
+          },
+          {
+            "key": "index.t78",
+            "type": "text",
+            "label": "Frequently asked questions"
+          }
+        ]
+      },
+      {
+        "id": "index-g11",
+        "label": "Frequently asked questions",
+        "fields": [
+          {
+            "key": "index.t79",
+            "type": "text",
+            "label": "Some commonly asked questions about our physiotherapy services."
+          },
+          {
+            "key": "index.t80",
+            "type": "text",
+            "label": "What types of conditions do you treat?"
+          },
+          {
+            "key": "index.t81",
+            "type": "textarea",
+            "label": "We treat orthopaedic, neurological, sports, paediatric, and geriatric…"
+          },
+          {
+            "key": "index.t82",
+            "type": "text",
+            "label": "Are your physiotherapists certified?"
+          },
+          {
+            "key": "index.t83",
+            "type": "textarea",
+            "label": "Yes. All our physiotherapists are highly qualified, certified in spec…"
+          },
+          {
+            "key": "index.t84",
+            "type": "text",
+            "label": "Do you offer home physiotherapy?"
+          },
+          {
+            "key": "index.t85",
+            "type": "textarea",
+            "label": "Yes. We provide professional physiotherapy at home with expert oversi…"
+          },
+          {
+            "key": "index.t86",
+            "type": "text",
+            "label": "How do I book an appointment?"
+          },
+          {
+            "key": "index.t87",
+            "type": "textarea",
+            "label": "You can easily book an appointment by calling us, sending a WhatsApp …"
+          },
+          {
+            "key": "index.t88",
+            "type": "text",
+            "label": "How much does a session cost?"
+          },
+          {
+            "key": "index.t89",
+            "type": "textarea",
+            "label": "Basic electrotherapy sessions start at Rs. 400/-. Manual therapy is R…"
+          },
+          {
+            "key": "index.t90",
+            "type": "text",
+            "label": "Which physiotherapist should I see?"
+          },
+          {
+            "key": "index.t91",
+            "type": "textarea",
+            "label": "Dr. U. Kalyani generally sees patients earlier in the day, while Dr. …"
+          },
+          {
+            "key": "index.t92",
+            "type": "text",
+            "label": "What are your clinic timings?"
+          },
+          {
+            "key": "index.t93",
+            "type": "text",
+            "label": "Monday to Saturday: 10:00 AM – 8:30 PM. Sunday: 3:00 PM – 8:30 PM."
+          },
+          {
+            "key": "index.href94",
+            "type": "text",
+            "label": "Button link — View All FAQs →"
+          }
+        ]
+      },
+      {
+        "id": "index-g12",
+        "label": "Ready to move without pain?",
+        "fields": [
+          {
+            "key": "index.bg95",
+            "type": "image",
+            "label": "Background image"
+          },
+          {
+            "key": "index.t96",
+            "type": "text",
+            "label": "Ready to move without pain?"
+          },
+          {
+            "key": "index.t97",
+            "type": "textarea",
+            "label": "Book your first consultation today — no referral needed. We'll create…"
+          },
+          {
+            "key": "index.href98",
+            "type": "text",
+            "label": "Button link — Book Appointment →"
+          }
+        ]
+      },
+      {
+        "id": "index-g13",
+        "label": "Footer — Explore",
+        "fields": [
+          {
+            "key": "index.img99",
+            "type": "image",
+            "label": "Image — Healing Hands logo"
+          },
+          {
+            "key": "index.img99alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "index.t100",
+            "type": "text",
+            "label": "Healing Hands"
+          },
+          {
+            "key": "index.t101",
+            "type": "textarea",
+            "label": "Advanced Physiotherapy Clinic in Hanamkonda, Warangal — personalised …"
+          },
+          {
+            "key": "index.t102",
+            "type": "text",
+            "label": "Explore"
+          },
+          {
+            "key": "index.t103",
+            "type": "text",
+            "label": "Home"
+          },
+          {
+            "key": "index.t104",
+            "type": "text",
+            "label": "About Us"
+          },
+          {
+            "key": "index.t105",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "index.t106",
+            "type": "text",
+            "label": "Blog"
+          },
+          {
+            "key": "index.t107",
+            "type": "text",
+            "label": "FAQ"
+          },
+          {
+            "key": "index.t108",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "index.t109",
+            "type": "text",
+            "label": "Neuro Physiotherapy"
+          },
+          {
+            "key": "index.t110",
+            "type": "text",
+            "label": "Sports Physiotherapy"
+          },
+          {
+            "key": "index.t111",
+            "type": "text",
+            "label": "Paediatric Physiotherapy"
+          },
+          {
+            "key": "index.t112",
+            "type": "text",
+            "label": "Home Care Physiotherapy"
+          },
+          {
+            "key": "index.t113",
+            "type": "text",
+            "label": "Contact"
+          },
+          {
+            "key": "index.t114",
+            "type": "text",
+            "label": "© 2026 Healing Hands Advanced Physiotherapy Clinic. All rights reserv…"
+          },
+          {
+            "key": "index.t115",
+            "type": "text",
+            "label": "Privacy Policy"
+          },
+          {
+            "key": "index.t116",
+            "type": "text",
+            "label": "Terms"
+          },
+          {
+            "key": "index.t117",
+            "type": "text",
+            "label": "Admin"
+          }
+        ]
+      },
+      {
+        "id": "index-g14",
+        "label": "Symptoms",
+        "fields": [
+          {
+            "key": "index.t118",
+            "type": "text",
+            "label": "×"
+          },
+          {
+            "key": "index.img119",
+            "type": "image",
+            "label": "Image"
+          },
+          {
+            "key": "index.img119alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "index.t120",
+            "type": "text",
+            "label": "Symptoms"
+          },
+          {
+            "key": "index.href121",
+            "type": "text",
+            "label": "Button link — Book Consultation →"
+          }
+        ]
+      },
+      {
+        "id": "index-g15",
+        "label": "Block 15",
+        "fields": [
+          {
+            "key": "index.t122",
+            "type": "text",
+            "label": "×"
+          },
+          {
+            "key": "index.img123",
+            "type": "image",
+            "label": "Image"
+          },
+          {
+            "key": "index.img123alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "index.href124",
+            "type": "text",
+            "label": "Button link — Book Consultation →"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "page": "about",
+    "file": "about.html",
+    "label": "About Us",
+    "groups": [
+      {
+        "id": "about-g1",
+        "label": "Top bar",
+        "fields": [
+          {
+            "key": "about.t1",
+            "type": "text",
+            "label": "Clinic hours:"
+          },
+          {
+            "key": "about.t2",
+            "type": "text",
+            "label": "FAQ"
+          }
+        ]
+      },
+      {
+        "id": "about-g2",
+        "label": "Header — Header / navigation",
+        "fields": [
+          {
+            "key": "about.img3",
+            "type": "image",
+            "label": "Image — Healing Hands Advanced Physiotherapy Cl…"
+          },
+          {
+            "key": "about.img3alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "about.t4",
+            "type": "text",
+            "label": "Healing Hands"
+          },
+          {
+            "key": "about.t5",
+            "type": "text",
+            "label": "Advanced Physiotherapy Clinic"
+          },
+          {
+            "key": "about.t6",
+            "type": "text",
+            "label": "Home"
+          },
+          {
+            "key": "about.t7",
+            "type": "text",
+            "label": "About Us"
+          },
+          {
+            "key": "about.t8",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "about.t9",
+            "type": "text",
+            "label": "What We Treat"
+          },
+          {
+            "key": "about.t10",
+            "type": "text",
+            "label": "Blog"
+          },
+          {
+            "key": "about.t11",
+            "type": "text",
+            "label": "FAQ"
+          },
+          {
+            "key": "about.t12",
+            "type": "text",
+            "label": "Book Appointment"
+          },
+          {
+            "key": "about.t13",
+            "type": "text",
+            "label": "Our Services"
+          },
+          {
+            "key": "about.href14",
+            "type": "text",
+            "label": "Button link — Our Services"
+          },
+          {
+            "key": "about.t15",
+            "type": "text",
+            "label": "Book Appointment"
+          },
+          {
+            "key": "about.href16",
+            "type": "text",
+            "label": "Button link — Book Appointment"
+          }
+        ]
+      },
+      {
+        "id": "about-g3",
+        "label": "Physiotherapy care built around the patient in fr…",
+        "fields": [
+          {
+            "key": "about.t17",
+            "type": "text",
+            "label": "Home"
+          },
+          {
+            "key": "about.t18",
+            "type": "text",
+            "label": "Physiotherapy care built around the patient in front of us"
+          },
+          {
+            "key": "about.t19",
+            "type": "textarea",
+            "label": "Healing Hands is a well equipped physiotherapy clinic in Hanamkonda —…"
+          }
+        ]
+      },
+      {
+        "id": "about-g4",
+        "label": "A neighbourhood clinic, run by physiotherapists",
+        "fields": [
+          {
+            "key": "about.img20",
+            "type": "image",
+            "label": "Image — Healing Hands clinic building in Hanamk…"
+          },
+          {
+            "key": "about.img20alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "about.t21",
+            "type": "text",
+            "label": "Our story"
+          },
+          {
+            "key": "about.t22",
+            "type": "text",
+            "label": "A neighbourhood clinic, run by physiotherapists"
+          },
+          {
+            "key": "about.t23",
+            "type": "textarea",
+            "label": "Healing Hands Advanced Physiotherapy Clinic was set up to give patien…"
+          },
+          {
+            "key": "about.t24",
+            "type": "textarea",
+            "label": "From musculoskeletal pain and sports injuries to post-surgical rehabi…"
+          },
+          {
+            "key": "about.t25",
+            "type": "text",
+            "label": "✓"
+          },
+          {
+            "key": "about.t26",
+            "type": "text",
+            "label": "✓"
+          },
+          {
+            "key": "about.t27",
+            "type": "text",
+            "label": "✓"
+          }
+        ]
+      },
+      {
+        "id": "about-g5",
+        "label": "Your physiotherapists",
+        "fields": [
+          {
+            "key": "about.t28",
+            "type": "text",
+            "label": "Meet the team"
+          },
+          {
+            "key": "about.t29",
+            "type": "text",
+            "label": "Your physiotherapists"
+          },
+          {
+            "key": "about.t30",
+            "type": "textarea",
+            "label": "Both physiotherapists at Healing Hands see patients directly, across …"
+          }
+        ]
+      },
+      {
+        "id": "about-g6",
+        "label": "Purpose-built treatment spaces",
+        "fields": [
+          {
+            "key": "about.t31",
+            "type": "text",
+            "label": "Inside the clinic"
+          },
+          {
+            "key": "about.t32",
+            "type": "text",
+            "label": "Purpose-built treatment spaces"
+          },
+          {
+            "key": "about.t33",
+            "type": "textarea",
+            "label": "Our rooms are set up so each part of your treatment — assessment, ele…"
+          },
+          {
+            "key": "about.t34",
+            "type": "text",
+            "label": "✓"
+          },
+          {
+            "key": "about.t35",
+            "type": "text",
+            "label": "✓"
+          },
+          {
+            "key": "about.t36",
+            "type": "text",
+            "label": "✓"
+          },
+          {
+            "key": "about.img37",
+            "type": "image",
+            "label": "Image — Rehabilitation exercise area with paral…"
+          },
+          {
+            "key": "about.img37alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          }
+        ]
+      },
+      {
+        "id": "about-g7",
+        "label": "Block 7",
+        "fields": [
+          {
+            "key": "about.img38",
+            "type": "image",
+            "label": "Image — Electrotherapy and traction treatment r…"
+          },
+          {
+            "key": "about.img38alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "about.t39",
+            "type": "text",
+            "label": "Electrotherapy & traction room"
+          },
+          {
+            "key": "about.img40",
+            "type": "image",
+            "label": "Image — Treatment room with two therapy beds"
+          },
+          {
+            "key": "about.img40alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "about.t41",
+            "type": "text",
+            "label": "Treatment room"
+          },
+          {
+            "key": "about.img42",
+            "type": "image",
+            "label": "Image — Reception desk at Healing Hands clinic"
+          },
+          {
+            "key": "about.img42alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "about.t43",
+            "type": "text",
+            "label": "Reception"
+          },
+          {
+            "key": "about.img44",
+            "type": "image",
+            "label": "Image — Consultation and treatment room"
+          },
+          {
+            "key": "about.img44alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "about.t45",
+            "type": "text",
+            "label": "Consultation room"
+          },
+          {
+            "key": "about.img46",
+            "type": "image",
+            "label": "Image — Patient receiving cupping therapy on th…"
+          },
+          {
+            "key": "about.img46alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "about.t47",
+            "type": "text",
+            "label": "Cupping therapy session"
+          },
+          {
+            "key": "about.img48",
+            "type": "image",
+            "label": "Image — Patient receiving dry needling on the l…"
+          },
+          {
+            "key": "about.img48alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "about.t49",
+            "type": "text",
+            "label": "Dry needling for lower-back pain"
+          },
+          {
+            "key": "about.img50",
+            "type": "image",
+            "label": "Image — Patient receiving dry needling at the n…"
+          },
+          {
+            "key": "about.img50alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "about.t51",
+            "type": "text",
+            "label": "Neck & cervical treatment"
+          }
+        ]
+      },
+      {
+        "id": "about-g8",
+        "label": "Have a question before you visit?",
+        "fields": [
+          {
+            "key": "about.t52",
+            "type": "text",
+            "label": "Have a question before you visit?"
+          },
+          {
+            "key": "about.t53",
+            "type": "textarea",
+            "label": "Call the clinic directly — our team can advise which physiotherapist …"
+          },
+          {
+            "key": "about.t54",
+            "type": "text",
+            "label": "See Services & Pricing"
+          },
+          {
+            "key": "about.href55",
+            "type": "text",
+            "label": "Button link — See Services & Pricing"
+          }
+        ]
+      },
+      {
+        "id": "about-g9",
+        "label": "Footer — Explore",
+        "fields": [
+          {
+            "key": "about.img56",
+            "type": "image",
+            "label": "Image — Healing Hands logo"
+          },
+          {
+            "key": "about.img56alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "about.t57",
+            "type": "text",
+            "label": "Healing Hands"
+          },
+          {
+            "key": "about.t58",
+            "type": "textarea",
+            "label": "Advanced Physiotherapy Clinic in Hanamkonda, Warangal — personalised …"
+          },
+          {
+            "key": "about.t59",
+            "type": "text",
+            "label": "Explore"
+          },
+          {
+            "key": "about.t60",
+            "type": "text",
+            "label": "Home"
+          },
+          {
+            "key": "about.t61",
+            "type": "text",
+            "label": "About Us"
+          },
+          {
+            "key": "about.t62",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "about.t63",
+            "type": "text",
+            "label": "Blog"
+          },
+          {
+            "key": "about.t64",
+            "type": "text",
+            "label": "FAQ"
+          },
+          {
+            "key": "about.t65",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "about.t66",
+            "type": "text",
+            "label": "Neuro Physiotherapy"
+          },
+          {
+            "key": "about.t67",
+            "type": "text",
+            "label": "Sports Physiotherapy"
+          },
+          {
+            "key": "about.t68",
+            "type": "text",
+            "label": "Paediatric Physiotherapy"
+          },
+          {
+            "key": "about.t69",
+            "type": "text",
+            "label": "Home Care Physiotherapy"
+          },
+          {
+            "key": "about.t70",
+            "type": "text",
+            "label": "Contact"
+          },
+          {
+            "key": "about.t71",
+            "type": "text",
+            "label": "© 2026 Healing Hands Advanced Physiotherapy Clinic. All rights reserv…"
+          },
+          {
+            "key": "about.t72",
+            "type": "text",
+            "label": "Privacy Policy"
+          },
+          {
+            "key": "about.t73",
+            "type": "text",
+            "label": "Terms"
+          },
+          {
+            "key": "about.t74",
+            "type": "text",
+            "label": "Admin"
+          }
+        ]
+      },
+      {
+        "id": "about-g10",
+        "label": "Block 10",
+        "fields": [
+          {
+            "key": "about.t75",
+            "type": "text",
+            "label": "×"
+          },
+          {
+            "key": "about.img76",
+            "type": "image",
+            "label": "Image"
+          },
+          {
+            "key": "about.img76alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "about.href77",
+            "type": "text",
+            "label": "Button link — Book Consultation →"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "page": "services",
+    "file": "services.html",
+    "label": "Services",
+    "groups": [
+      {
+        "id": "services-g1",
+        "label": "Top bar",
+        "fields": [
+          {
+            "key": "services.t1",
+            "type": "text",
+            "label": "Clinic hours:"
+          },
+          {
+            "key": "services.t2",
+            "type": "text",
+            "label": "FAQ"
+          }
+        ]
+      },
+      {
+        "id": "services-g2",
+        "label": "Header — Top bar",
+        "fields": [
+          {
+            "key": "services.img3",
+            "type": "image",
+            "label": "Image — Healing Hands Advanced Physiotherapy Cl…"
+          },
+          {
+            "key": "services.img3alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "services.t4",
+            "type": "text",
+            "label": "Healing Hands"
+          },
+          {
+            "key": "services.t5",
+            "type": "text",
+            "label": "Advanced Physiotherapy Clinic"
+          },
+          {
+            "key": "services.t6",
+            "type": "text",
+            "label": "Home"
+          },
+          {
+            "key": "services.t7",
+            "type": "text",
+            "label": "About Us"
+          },
+          {
+            "key": "services.t8",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "services.t9",
+            "type": "text",
+            "label": "What We Treat"
+          },
+          {
+            "key": "services.t10",
+            "type": "text",
+            "label": "Blog"
+          },
+          {
+            "key": "services.t11",
+            "type": "text",
+            "label": "FAQ"
+          },
+          {
+            "key": "services.t12",
+            "type": "text",
+            "label": "Book Appointment"
+          },
+          {
+            "key": "services.t13",
+            "type": "text",
+            "label": "Our Services"
+          },
+          {
+            "key": "services.href14",
+            "type": "text",
+            "label": "Button link — Our Services"
+          },
+          {
+            "key": "services.t15",
+            "type": "text",
+            "label": "Book Appointment"
+          },
+          {
+            "key": "services.href16",
+            "type": "text",
+            "label": "Button link — Book Appointment"
+          }
+        ]
+      },
+      {
+        "id": "services-g3",
+        "label": "Services & treatment pricing",
+        "fields": [
+          {
+            "key": "services.t17",
+            "type": "text",
+            "label": "Home"
+          },
+          {
+            "key": "services.t18",
+            "type": "text",
+            "label": "Services & treatment pricing"
+          },
+          {
+            "key": "services.t19",
+            "type": "textarea",
+            "label": "We provide specialised physiotherapy treatments for neurological, ort…"
+          }
+        ]
+      },
+      {
+        "id": "services-g4",
+        "label": "Conditions we treat",
+        "fields": []
+      },
+      {
+        "id": "services-g5",
+        "label": "Symptoms we address",
+        "fields": []
+      },
+      {
+        "id": "services-g6",
+        "label": "Therapies offered at the clinic",
+        "fields": []
+      },
+      {
+        "id": "services-g7",
+        "label": "Interferential Therapy (IFT)",
+        "fields": []
+      },
+      {
+        "id": "services-g8",
+        "label": "Chiropractic Therapy",
+        "fields": []
+      },
+      {
+        "id": "services-g9",
+        "label": "Ultrasound Therapy",
+        "fields": []
+      },
+      {
+        "id": "services-g10",
+        "label": "Laser Therapy",
+        "fields": []
+      },
+      {
+        "id": "services-g11",
+        "label": "Cupping Therapy",
+        "fields": []
+      },
+      {
+        "id": "services-g12",
+        "label": "Wax Therapy",
+        "fields": []
+      },
+      {
+        "id": "services-g13",
+        "label": "Kinesio Taping / Taping Therapy",
+        "fields": []
+      },
+      {
+        "id": "services-g14",
+        "label": "Dry Needling Therapy",
+        "fields": []
+      },
+      {
+        "id": "services-g15",
+        "label": "Thermotherapy (Heat Therapy)",
+        "fields": []
+      },
+      {
+        "id": "services-g16",
+        "label": "TENS Therapy",
+        "fields": []
+      },
+      {
+        "id": "services-g17",
+        "label": "Lymphatic Drainage Massage",
+        "fields": []
+      },
+      {
+        "id": "services-g18",
+        "label": "Traction Therapy",
+        "fields": []
+      },
+      {
+        "id": "services-g19",
+        "label": "Cryotherapy (Cold Therapy)",
+        "fields": []
+      },
+      {
+        "id": "services-g20",
+        "label": "Robotic Spinal Decompression",
+        "fields": []
+      },
+      {
+        "id": "services-g21",
+        "label": "Trigger Point Injection",
+        "fields": []
+      },
+      {
+        "id": "services-g22",
+        "label": "Manual Therapy",
+        "fields": []
+      },
+      {
+        "id": "services-g23",
+        "label": "Myofascial Release (MFR)",
+        "fields": []
+      },
+      {
+        "id": "services-g24",
+        "label": "Soft Tissue Mobilization",
+        "fields": []
+      },
+      {
+        "id": "services-g25",
+        "label": "Pelvic Floor Physical Therapy",
+        "fields": []
+      },
+      {
+        "id": "services-g26",
+        "label": "Chest Physiotherapy",
+        "fields": []
+      },
+      {
+        "id": "services-g27",
+        "label": "Shortwave Diathermy (SWD)",
+        "fields": []
+      },
+      {
+        "id": "services-g28",
+        "label": "Treatment pricing",
+        "fields": [
+          {
+            "key": "services.t109",
+            "type": "text",
+            "label": "Tariff list"
+          },
+          {
+            "key": "services.t110",
+            "type": "text",
+            "label": "Treatment pricing"
+          },
+          {
+            "key": "services.t111",
+            "type": "textarea",
+            "label": "The rates below are displayed at our reception desk. Combination and …"
+          },
+          {
+            "key": "services.t112",
+            "type": "text",
+            "label": "Treatment"
+          },
+          {
+            "key": "services.t113",
+            "type": "text",
+            "label": "Price"
+          },
+          {
+            "key": "services.t114",
+            "type": "text",
+            "label": "Basic treatment (any two electrotherapy modalities)"
+          },
+          {
+            "key": "services.t115",
+            "type": "text",
+            "label": "₹400"
+          },
+          {
+            "key": "services.t116",
+            "type": "text",
+            "label": "Manual therapy"
+          },
+          {
+            "key": "services.t117",
+            "type": "text",
+            "label": "₹500"
+          },
+          {
+            "key": "services.t118",
+            "type": "text",
+            "label": "Cupping therapy"
+          },
+          {
+            "key": "services.t119",
+            "type": "text",
+            "label": "₹600"
+          },
+          {
+            "key": "services.t120",
+            "type": "text",
+            "label": "Dry needle therapy"
+          },
+          {
+            "key": "services.t121",
+            "type": "text",
+            "label": "₹800"
+          },
+          {
+            "key": "services.t122",
+            "type": "textarea",
+            "label": "Consultation, IFT, ultrasound, TENS, stimulator, hydrocollator packs,…"
+          }
+        ]
+      },
+      {
+        "id": "services-g29",
+        "label": "Not sure which treatment you need?",
+        "fields": [
+          {
+            "key": "services.t123",
+            "type": "text",
+            "label": "Not sure which treatment you need?"
+          },
+          {
+            "key": "services.t124",
+            "type": "textarea",
+            "label": "Call the clinic and describe your symptoms — our team will guide you …"
+          },
+          {
+            "key": "services.t125",
+            "type": "text",
+            "label": "Read FAQs"
+          },
+          {
+            "key": "services.href126",
+            "type": "text",
+            "label": "Button link — Read FAQs"
+          }
+        ]
+      },
+      {
+        "id": "services-g30",
+        "label": "Footer — Explore",
+        "fields": [
+          {
+            "key": "services.img127",
+            "type": "image",
+            "label": "Image — Healing Hands logo"
+          },
+          {
+            "key": "services.img127alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "services.t128",
+            "type": "text",
+            "label": "Healing Hands"
+          },
+          {
+            "key": "services.t129",
+            "type": "textarea",
+            "label": "Advanced Physiotherapy Clinic in Hanamkonda, Warangal — personalised …"
+          },
+          {
+            "key": "services.t130",
+            "type": "text",
+            "label": "Explore"
+          },
+          {
+            "key": "services.t131",
+            "type": "text",
+            "label": "Home"
+          },
+          {
+            "key": "services.t132",
+            "type": "text",
+            "label": "About Us"
+          },
+          {
+            "key": "services.t133",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "services.t134",
+            "type": "text",
+            "label": "Blog"
+          },
+          {
+            "key": "services.t135",
+            "type": "text",
+            "label": "FAQ"
+          },
+          {
+            "key": "services.t136",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "services.t137",
+            "type": "text",
+            "label": "Neuro Physiotherapy"
+          },
+          {
+            "key": "services.t138",
+            "type": "text",
+            "label": "Sports Physiotherapy"
+          },
+          {
+            "key": "services.t139",
+            "type": "text",
+            "label": "Paediatric Physiotherapy"
+          },
+          {
+            "key": "services.t140",
+            "type": "text",
+            "label": "Home Care Physiotherapy"
+          },
+          {
+            "key": "services.t141",
+            "type": "text",
+            "label": "Contact"
+          },
+          {
+            "key": "services.t142",
+            "type": "text",
+            "label": "© 2026 Healing Hands Advanced Physiotherapy Clinic. All rights reserv…"
+          },
+          {
+            "key": "services.t143",
+            "type": "text",
+            "label": "Privacy Policy"
+          },
+          {
+            "key": "services.t144",
+            "type": "text",
+            "label": "Terms"
+          },
+          {
+            "key": "services.t145",
+            "type": "text",
+            "label": "Admin"
+          }
+        ]
+      },
+      {
+        "id": "services-g31",
+        "label": "Symptoms",
+        "fields": []
+      }
+    ]
+  },
+  {
+    "page": "what-we-treat",
+    "file": "what-we-treat.html",
+    "label": "What We Treat",
+    "groups": [
+      {
+        "id": "what-we-treat-g1",
+        "label": "Top bar",
+        "fields": [
+          {
+            "key": "what-we-treat.t1",
+            "type": "text",
+            "label": "Clinic hours:"
+          },
+          {
+            "key": "what-we-treat.t2",
+            "type": "text",
+            "label": "FAQ"
+          }
+        ]
+      },
+      {
+        "id": "what-we-treat-g2",
+        "label": "Header — Header / navigation",
+        "fields": [
+          {
+            "key": "what-we-treat.img3",
+            "type": "image",
+            "label": "Image — Healing Hands Advanced Physiotherapy Cl…"
+          },
+          {
+            "key": "what-we-treat.img3alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "what-we-treat.t4",
+            "type": "text",
+            "label": "Healing Hands"
+          },
+          {
+            "key": "what-we-treat.t5",
+            "type": "text",
+            "label": "Advanced Physiotherapy Clinic"
+          },
+          {
+            "key": "what-we-treat.t6",
+            "type": "text",
+            "label": "Home"
+          },
+          {
+            "key": "what-we-treat.t7",
+            "type": "text",
+            "label": "About Us"
+          },
+          {
+            "key": "what-we-treat.t8",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "what-we-treat.t9",
+            "type": "text",
+            "label": "What We Treat"
+          },
+          {
+            "key": "what-we-treat.t10",
+            "type": "text",
+            "label": "Blog"
+          },
+          {
+            "key": "what-we-treat.t11",
+            "type": "text",
+            "label": "FAQ"
+          },
+          {
+            "key": "what-we-treat.t12",
+            "type": "text",
+            "label": "Book Appointment"
+          },
+          {
+            "key": "what-we-treat.t13",
+            "type": "text",
+            "label": "Our Services"
+          },
+          {
+            "key": "what-we-treat.href14",
+            "type": "text",
+            "label": "Button link — Our Services"
+          },
+          {
+            "key": "what-we-treat.t15",
+            "type": "text",
+            "label": "Book Appointment"
+          },
+          {
+            "key": "what-we-treat.href16",
+            "type": "text",
+            "label": "Button link — Book Appointment"
+          }
+        ]
+      },
+      {
+        "id": "what-we-treat-g3",
+        "label": "What We Treat",
+        "fields": [
+          {
+            "key": "what-we-treat.t17",
+            "type": "text",
+            "label": "Specialised physiotherapy care"
+          },
+          {
+            "key": "what-we-treat.t18",
+            "type": "text",
+            "label": "What We Treat"
+          },
+          {
+            "key": "what-we-treat.t19",
+            "type": "textarea",
+            "label": "We provide specialized physiotherapy treatments for neurological, ort…"
+          },
+          {
+            "key": "what-we-treat.t21",
+            "type": "text",
+            "label": "Symptoms"
+          },
+          {
+            "key": "what-we-treat.t22",
+            "type": "text",
+            "label": "Therapies Offered"
+          },
+          {
+            "key": "what-we-treat.t23",
+            "type": "text",
+            "label": "Services Offered"
+          }
+        ]
+      },
+      {
+        "id": "what-we-treat-g4",
+        "label": "Footer — Explore",
+        "fields": [
+          {
+            "key": "what-we-treat.img24",
+            "type": "image",
+            "label": "Image — Healing Hands logo"
+          },
+          {
+            "key": "what-we-treat.img24alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "what-we-treat.t25",
+            "type": "text",
+            "label": "Healing Hands"
+          },
+          {
+            "key": "what-we-treat.t26",
+            "type": "textarea",
+            "label": "Advanced Physiotherapy Clinic in Hanamkonda, Warangal — personalised …"
+          },
+          {
+            "key": "what-we-treat.t27",
+            "type": "text",
+            "label": "Explore"
+          },
+          {
+            "key": "what-we-treat.t28",
+            "type": "text",
+            "label": "Home"
+          },
+          {
+            "key": "what-we-treat.t29",
+            "type": "text",
+            "label": "About Us"
+          },
+          {
+            "key": "what-we-treat.t30",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "what-we-treat.t31",
+            "type": "text",
+            "label": "Blog"
+          },
+          {
+            "key": "what-we-treat.t32",
+            "type": "text",
+            "label": "FAQ"
+          },
+          {
+            "key": "what-we-treat.t33",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "what-we-treat.t34",
+            "type": "text",
+            "label": "Neuro Physiotherapy"
+          },
+          {
+            "key": "what-we-treat.t35",
+            "type": "text",
+            "label": "Sports Physiotherapy"
+          },
+          {
+            "key": "what-we-treat.t36",
+            "type": "text",
+            "label": "Paediatric Physiotherapy"
+          },
+          {
+            "key": "what-we-treat.t37",
+            "type": "text",
+            "label": "Home Care Physiotherapy"
+          },
+          {
+            "key": "what-we-treat.t38",
+            "type": "text",
+            "label": "Contact"
+          },
+          {
+            "key": "what-we-treat.t39",
+            "type": "text",
+            "label": "© 2026 Healing Hands Advanced Physiotherapy Clinic. All rights reserv…"
+          },
+          {
+            "key": "what-we-treat.t40",
+            "type": "text",
+            "label": "Privacy Policy"
+          },
+          {
+            "key": "what-we-treat.t41",
+            "type": "text",
+            "label": "Terms"
+          },
+          {
+            "key": "what-we-treat.t42",
+            "type": "text",
+            "label": "Admin"
+          },
+          {
+            "key": "what-we-treat.t43",
+            "type": "text",
+            "label": "Section tag — What we treat (conditions carousel)"
+          },
+          {
+            "key": "what-we-treat.t44",
+            "type": "text",
+            "label": "Heading — Conditions we treat (carousel)"
+          },
+          {
+            "key": "what-we-treat.t45",
+            "type": "text",
+            "label": "Intro — Conditions we treat (carousel)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "page": "blog",
+    "file": "blog.html",
+    "label": "Blog",
+    "groups": [
+      {
+        "id": "blog-g1",
+        "label": "Top bar",
+        "fields": [
+          {
+            "key": "blog.t1",
+            "type": "text",
+            "label": "Clinic hours:"
+          },
+          {
+            "key": "blog.t2",
+            "type": "text",
+            "label": "FAQ"
+          }
+        ]
+      },
+      {
+        "id": "blog-g2",
+        "label": "Header — Header / navigation",
+        "fields": [
+          {
+            "key": "blog.img3",
+            "type": "image",
+            "label": "Image — Healing Hands Advanced Physiotherapy Cl…"
+          },
+          {
+            "key": "blog.img3alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "blog.t4",
+            "type": "text",
+            "label": "Healing Hands"
+          },
+          {
+            "key": "blog.t5",
+            "type": "text",
+            "label": "Advanced Physiotherapy Clinic"
+          },
+          {
+            "key": "blog.t6",
+            "type": "text",
+            "label": "Home"
+          },
+          {
+            "key": "blog.t7",
+            "type": "text",
+            "label": "About Us"
+          },
+          {
+            "key": "blog.t8",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "blog.t9",
+            "type": "text",
+            "label": "What We Treat"
+          },
+          {
+            "key": "blog.t10",
+            "type": "text",
+            "label": "Blog"
+          },
+          {
+            "key": "blog.t11",
+            "type": "text",
+            "label": "FAQ"
+          },
+          {
+            "key": "blog.t12",
+            "type": "text",
+            "label": "Book Appointment"
+          },
+          {
+            "key": "blog.t13",
+            "type": "text",
+            "label": "Our Services"
+          },
+          {
+            "key": "blog.href14",
+            "type": "text",
+            "label": "Button link — Our Services"
+          },
+          {
+            "key": "blog.t15",
+            "type": "text",
+            "label": "Book Appointment"
+          },
+          {
+            "key": "blog.href16",
+            "type": "text",
+            "label": "Button link — Book Appointment"
+          }
+        ]
+      },
+      {
+        "id": "blog-g3",
+        "label": "Physiotherapy tips & clinic updates",
+        "fields": [
+          {
+            "key": "blog.t17",
+            "type": "text",
+            "label": "Home"
+          },
+          {
+            "key": "blog.t18",
+            "type": "text",
+            "label": "Physiotherapy tips & clinic updates"
+          },
+          {
+            "key": "blog.t19",
+            "type": "text",
+            "label": "Simple, practical guidance on everyday aches, injury prevention and r…"
+          },
+          {
+            "key": "blog.t20",
+            "type": "textarea",
+            "label": "These are sample article placeholders showing how the blog will look.…"
+          },
+          {
+            "key": "blog.t33",
+            "type": "text",
+            "label": "Have a topic you'd like us to write about?"
+          },
+          {
+            "key": "blog.t34",
+            "type": "text",
+            "label": "Let us know when you visit — we're happy to cover questions our patie…"
+          },
+          {
+            "key": "blog.t36",
+            "type": "text",
+            "label": "Healing Hands"
+          },
+          {
+            "key": "blog.t37",
+            "type": "textarea",
+            "label": "Advanced Physiotherapy Clinic in Hanamkonda, Warangal — personalised in-clinic physiotherapy and manual therapy care."
+          }
+        ]
+      },
+      {
+        "id": "blog-g4",
+        "label": "Footer — Explore",
+        "fields": [
+          {
+            "key": "blog.img35",
+            "type": "image",
+            "label": "Image — Healing Hands logo"
+          },
+          {
+            "key": "blog.img35alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "blog.t38",
+            "type": "text",
+            "label": "Explore"
+          },
+          {
+            "key": "blog.t39",
+            "type": "text",
+            "label": "Home"
+          },
+          {
+            "key": "blog.t40",
+            "type": "text",
+            "label": "About Us"
+          },
+          {
+            "key": "blog.t41",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "blog.t42",
+            "type": "text",
+            "label": "Blog"
+          },
+          {
+            "key": "blog.t43",
+            "type": "text",
+            "label": "FAQ"
+          },
+          {
+            "key": "blog.t44",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "blog.t45",
+            "type": "text",
+            "label": "Neuro Physiotherapy"
+          },
+          {
+            "key": "blog.t46",
+            "type": "text",
+            "label": "Sports Physiotherapy"
+          },
+          {
+            "key": "blog.t47",
+            "type": "text",
+            "label": "Paediatric Physiotherapy"
+          },
+          {
+            "key": "blog.t48",
+            "type": "text",
+            "label": "Home Care Physiotherapy"
+          },
+          {
+            "key": "blog.t49",
+            "type": "text",
+            "label": "Contact"
+          },
+          {
+            "key": "blog.t50",
+            "type": "text",
+            "label": "© 2026 Healing Hands Advanced Physiotherapy Clinic. All rights reserv…"
+          },
+          {
+            "key": "blog.t51",
+            "type": "text",
+            "label": "Privacy Policy"
+          },
+          {
+            "key": "blog.t52",
+            "type": "text",
+            "label": "Terms"
+          },
+          {
+            "key": "blog.t53",
+            "type": "text",
+            "label": "Admin"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "page": "faq",
+    "file": "faq.html",
+    "label": "FAQ",
+    "groups": [
+      {
+        "id": "faq-g1",
+        "label": "Top bar",
+        "fields": [
+          {
+            "key": "faq.t1",
+            "type": "text",
+            "label": "Clinic hours:"
+          },
+          {
+            "key": "faq.t2",
+            "type": "text",
+            "label": "FAQ"
+          }
+        ]
+      },
+      {
+        "id": "faq-g2",
+        "label": "Header — Header / navigation",
+        "fields": [
+          {
+            "key": "faq.img3",
+            "type": "image",
+            "label": "Image — Healing Hands Advanced Physiotherapy Cl…"
+          },
+          {
+            "key": "faq.img3alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "faq.t4",
+            "type": "text",
+            "label": "Healing Hands"
+          },
+          {
+            "key": "faq.t5",
+            "type": "text",
+            "label": "Advanced Physiotherapy Clinic"
+          },
+          {
+            "key": "faq.t6",
+            "type": "text",
+            "label": "Home"
+          },
+          {
+            "key": "faq.t7",
+            "type": "text",
+            "label": "About Us"
+          },
+          {
+            "key": "faq.t8",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "faq.t9",
+            "type": "text",
+            "label": "What We Treat"
+          },
+          {
+            "key": "faq.t10",
+            "type": "text",
+            "label": "Blog"
+          },
+          {
+            "key": "faq.t11",
+            "type": "text",
+            "label": "FAQ"
+          },
+          {
+            "key": "faq.t12",
+            "type": "text",
+            "label": "Book Appointment"
+          },
+          {
+            "key": "faq.t13",
+            "type": "text",
+            "label": "Our Services"
+          },
+          {
+            "key": "faq.href14",
+            "type": "text",
+            "label": "Button link — Our Services"
+          },
+          {
+            "key": "faq.t15",
+            "type": "text",
+            "label": "Book Appointment"
+          },
+          {
+            "key": "faq.href16",
+            "type": "text",
+            "label": "Button link — Book Appointment"
+          }
+        ]
+      },
+      {
+        "id": "faq-g3",
+        "label": "Frequently asked questions",
+        "fields": [
+          {
+            "key": "faq.t17",
+            "type": "text",
+            "label": "Home"
+          },
+          {
+            "key": "faq.t18",
+            "type": "text",
+            "label": "Frequently asked questions"
+          },
+          {
+            "key": "faq.t19",
+            "type": "textarea",
+            "label": "Answers to the questions patients ask us most often. Can't find yours…"
+          },
+          {
+            "key": "faq.t20",
+            "type": "text",
+            "label": "+"
+          },
+          {
+            "key": "faq.t21",
+            "type": "textarea",
+            "label": "Call the clinic directly or message us on WhatsApp with your preferre…"
+          },
+          {
+            "key": "faq.t22",
+            "type": "text",
+            "label": "+"
+          },
+          {
+            "key": "faq.t23",
+            "type": "textarea",
+            "label": "No referral is required. You can walk in or call to book directly, an…"
+          },
+          {
+            "key": "faq.t24",
+            "type": "text",
+            "label": "+"
+          },
+          {
+            "key": "faq.t25",
+            "type": "textarea",
+            "label": "Your first session starts with a consultation and physical assessment…"
+          },
+          {
+            "key": "faq.t26",
+            "type": "text",
+            "label": "+"
+          },
+          {
+            "key": "faq.t27",
+            "type": "text",
+            "label": "Services & Pricing"
+          },
+          {
+            "key": "faq.t28",
+            "type": "text",
+            "label": "+"
+          },
+          {
+            "key": "faq.t29",
+            "type": "textarea",
+            "label": "Dr. U. Kalyani generally sees patients earlier in the day, while Dr. …"
+          },
+          {
+            "key": "faq.t30",
+            "type": "text",
+            "label": "+"
+          },
+          {
+            "key": "faq.t31",
+            "type": "text",
+            "label": "+"
+          },
+          {
+            "key": "faq.t32",
+            "type": "textarea",
+            "label": "This varies by condition. Your physiotherapist will give you an estim…"
+          },
+          {
+            "key": "faq.t33",
+            "type": "text",
+            "label": "+"
+          },
+          {
+            "key": "faq.t34",
+            "type": "textarea",
+            "label": "For patients who are unable to travel, please call the clinic to chec…"
+          },
+          {
+            "key": "faq.t35",
+            "type": "text",
+            "label": "Still have questions?"
+          },
+          {
+            "key": "faq.t36",
+            "type": "text",
+            "label": "Our team is happy to talk you through your options before you book."
+          }
+        ]
+      },
+      {
+        "id": "faq-g4",
+        "label": "Footer — Explore",
+        "fields": [
+          {
+            "key": "faq.img37",
+            "type": "image",
+            "label": "Image — Healing Hands logo"
+          },
+          {
+            "key": "faq.img37alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "faq.t38",
+            "type": "text",
+            "label": "Healing Hands"
+          },
+          {
+            "key": "faq.t39",
+            "type": "textarea",
+            "label": "Advanced Physiotherapy Clinic in Hanamkonda, Warangal — personalised …"
+          },
+          {
+            "key": "faq.t40",
+            "type": "text",
+            "label": "Explore"
+          },
+          {
+            "key": "faq.t41",
+            "type": "text",
+            "label": "Home"
+          },
+          {
+            "key": "faq.t42",
+            "type": "text",
+            "label": "About Us"
+          },
+          {
+            "key": "faq.t43",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "faq.t44",
+            "type": "text",
+            "label": "Blog"
+          },
+          {
+            "key": "faq.t45",
+            "type": "text",
+            "label": "FAQ"
+          },
+          {
+            "key": "faq.t46",
+            "type": "text",
+            "label": "Book Appointment"
+          },
+          {
+            "key": "faq.t47",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "faq.t48",
+            "type": "text",
+            "label": "Neuro Physiotherapy"
+          },
+          {
+            "key": "faq.t49",
+            "type": "text",
+            "label": "Sports Physiotherapy"
+          },
+          {
+            "key": "faq.t50",
+            "type": "text",
+            "label": "Paediatric Physiotherapy"
+          },
+          {
+            "key": "faq.t51",
+            "type": "text",
+            "label": "Home Care Physiotherapy"
+          },
+          {
+            "key": "faq.t52",
+            "type": "text",
+            "label": "Contact"
+          },
+          {
+            "key": "faq.t53",
+            "type": "text",
+            "label": "© 2026 Healing Hands Advanced Physiotherapy Clinic. All rights reserv…"
+          },
+          {
+            "key": "faq.t54",
+            "type": "text",
+            "label": "Privacy Policy"
+          },
+          {
+            "key": "faq.t55",
+            "type": "text",
+            "label": "Terms"
+          },
+          {
+            "key": "faq.t56",
+            "type": "text",
+            "label": "Admin"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "page": "book-appointment",
+    "file": "book-appointment.html",
+    "label": "Book Appointment",
+    "groups": [
+      {
+        "id": "book-appointment-g1",
+        "label": "Top bar",
+        "fields": [
+          {
+            "key": "book-appointment.t1",
+            "type": "text",
+            "label": "Clinic hours:"
+          },
+          {
+            "key": "book-appointment.t2",
+            "type": "text",
+            "label": "FAQ"
+          }
+        ]
+      },
+      {
+        "id": "book-appointment-g2",
+        "label": "Header — Header / navigation",
+        "fields": [
+          {
+            "key": "book-appointment.img3",
+            "type": "image",
+            "label": "Image — Healing Hands Advanced Physiotherapy Cl…"
+          },
+          {
+            "key": "book-appointment.img3alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "book-appointment.t4",
+            "type": "text",
+            "label": "Healing Hands"
+          },
+          {
+            "key": "book-appointment.t5",
+            "type": "text",
+            "label": "Advanced Physiotherapy Clinic"
+          },
+          {
+            "key": "book-appointment.t6",
+            "type": "text",
+            "label": "Home"
+          },
+          {
+            "key": "book-appointment.t7",
+            "type": "text",
+            "label": "About Us"
+          },
+          {
+            "key": "book-appointment.t8",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "book-appointment.t9",
+            "type": "text",
+            "label": "What We Treat"
+          },
+          {
+            "key": "book-appointment.t10",
+            "type": "text",
+            "label": "Blog"
+          },
+          {
+            "key": "book-appointment.t11",
+            "type": "text",
+            "label": "FAQ"
+          },
+          {
+            "key": "book-appointment.t12",
+            "type": "text",
+            "label": "Book Appointment"
+          },
+          {
+            "key": "book-appointment.t13",
+            "type": "text",
+            "label": "Our Services"
+          },
+          {
+            "key": "book-appointment.href14",
+            "type": "text",
+            "label": "Button link — Our Services"
+          },
+          {
+            "key": "book-appointment.t15",
+            "type": "text",
+            "label": "Book Appointment"
+          },
+          {
+            "key": "book-appointment.href16",
+            "type": "text",
+            "label": "Button link — Book Appointment"
+          }
+        ]
+      },
+      {
+        "id": "book-appointment-g3",
+        "label": "Book Your Appointment",
+        "fields": [
+          {
+            "key": "book-appointment.t17",
+            "type": "text",
+            "label": "Book Your"
+          },
+          {
+            "key": "book-appointment.t18",
+            "type": "text",
+            "label": "Please Fill The Form"
+          },
+          {
+            "key": "book-appointment.t19",
+            "type": "text",
+            "label": "Name"
+          },
+          {
+            "key": "book-appointment.t20",
+            "type": "text",
+            "label": "Mobile No."
+          },
+          {
+            "key": "book-appointment.t21",
+            "type": "text",
+            "label": "City"
+          },
+          {
+            "key": "book-appointment.t22",
+            "type": "text",
+            "label": "Choose Treatment Type"
+          },
+          {
+            "key": "book-appointment.t23",
+            "type": "text",
+            "label": "Type Of Service"
+          },
+          {
+            "key": "book-appointment.t24",
+            "type": "text",
+            "label": "Chief Complaint/Concern"
+          },
+          {
+            "key": "book-appointment.t25",
+            "type": "text",
+            "label": "Select Date & Time Slot"
+          },
+          {
+            "key": "book-appointment.t27",
+            "type": "text",
+            "label": "Submit"
+          },
+          {
+            "key": "book-appointment.t28",
+            "type": "textarea",
+            "label": "Thank you! Your appointment request has been recorded. Our team will …"
+          },
+          {
+            "key": "book-appointment.t33",
+            "type": "text",
+            "label": "Direction"
+          },
+          {
+            "key": "book-appointment.href34",
+            "type": "text",
+            "label": "Button link — Direction"
+          }
+        ]
+      },
+      {
+        "id": "book-appointment-g4",
+        "label": "Footer — Explore",
+        "fields": [
+          {
+            "key": "book-appointment.img35",
+            "type": "image",
+            "label": "Image — Healing Hands logo"
+          },
+          {
+            "key": "book-appointment.img35alt",
+            "type": "text",
+            "label": "Image description (alt text)"
+          },
+          {
+            "key": "book-appointment.t36",
+            "type": "text",
+            "label": "Healing Hands"
+          },
+          {
+            "key": "book-appointment.t37",
+            "type": "textarea",
+            "label": "Advanced Physiotherapy Clinic in Hanamkonda, Warangal — personalised …"
+          },
+          {
+            "key": "book-appointment.t38",
+            "type": "text",
+            "label": "Explore"
+          },
+          {
+            "key": "book-appointment.t39",
+            "type": "text",
+            "label": "Home"
+          },
+          {
+            "key": "book-appointment.t40",
+            "type": "text",
+            "label": "About Us"
+          },
+          {
+            "key": "book-appointment.t41",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "book-appointment.t42",
+            "type": "text",
+            "label": "Blog"
+          },
+          {
+            "key": "book-appointment.t43",
+            "type": "text",
+            "label": "FAQ"
+          },
+          {
+            "key": "book-appointment.t44",
+            "type": "text",
+            "label": "Book Appointment"
+          },
+          {
+            "key": "book-appointment.t45",
+            "type": "text",
+            "label": "Services"
+          },
+          {
+            "key": "book-appointment.t46",
+            "type": "text",
+            "label": "Neuro Physiotherapy"
+          },
+          {
+            "key": "book-appointment.t47",
+            "type": "text",
+            "label": "Sports Physiotherapy"
+          },
+          {
+            "key": "book-appointment.t48",
+            "type": "text",
+            "label": "Paediatric Physiotherapy"
+          },
+          {
+            "key": "book-appointment.t49",
+            "type": "text",
+            "label": "Home Care Physiotherapy"
+          },
+          {
+            "key": "book-appointment.t50",
+            "type": "text",
+            "label": "Contact"
+          },
+          {
+            "key": "book-appointment.t51",
+            "type": "text",
+            "label": "© 2026 Healing Hands Advanced Physiotherapy Clinic. All rights reserv…"
+          },
+          {
+            "key": "book-appointment.t52",
+            "type": "text",
+            "label": "Privacy Policy"
+          },
+          {
+            "key": "book-appointment.t53",
+            "type": "text",
+            "label": "Terms"
+          },
+          {
+            "key": "book-appointment.t54",
+            "type": "text",
+            "label": "Admin"
+          }
+        ]
+      }
+    ]
+  }
+]

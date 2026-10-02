@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /admin.html
+
+Sitemap: https://healinghandsphysio.in/sitemap.xml

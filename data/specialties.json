@@ -1,0 +1,44 @@
+[
+  {
+    "id": "sp-neuro",
+    "title": "Neuro Physiotherapy — Rehab",
+    "photo": "images/doctor-prakash.jpeg",
+    "alt": "Physiotherapist providing attentive care",
+    "visible": true
+  },
+  {
+    "id": "sp-sports",
+    "title": "Sports Physiotherapy",
+    "photo": "images/treatment-room-1.jpeg",
+    "alt": "Prepared physiotherapy treatment room",
+    "visible": true
+  },
+  {
+    "id": "sp-paed",
+    "title": "Paediatric Physiotherapy",
+    "photo": "images/gym-room.jpeg",
+    "alt": "Rehabilitation gym with walking bars",
+    "visible": true
+  },
+  {
+    "id": "sp-geri",
+    "title": "Geriatric Physiotherapy",
+    "photo": "images/doctor-kalyani.jpeg",
+    "alt": "Healing Hands physiotherapist",
+    "visible": true
+  },
+  {
+    "id": "sp-home",
+    "title": "Home Care Physiotherapy",
+    "photo": "images/treatment-room-2.jpeg",
+    "alt": "Clinic treatment area",
+    "visible": true
+  },
+  {
+    "id": "sp-chiro",
+    "title": "Chiropractor Treatment",
+    "photo": "images/treatment-room-3.jpeg",
+    "alt": "Quiet physiotherapy consultation room",
+    "visible": true
+  }
+]

@@ -1,0 +1,193 @@
+{
+  "symptoms": [
+    {
+      "id": "sym-1",
+      "name": "Muscle Stiffness",
+      "visible": true
+    },
+    {
+      "id": "sym-2",
+      "name": "Muscle Spasm",
+      "visible": true
+    },
+    {
+      "id": "sym-3",
+      "name": "Crepitus – Cracking Joints",
+      "visible": true
+    },
+    {
+      "id": "sym-4",
+      "name": "Numbness and Tingling",
+      "visible": true
+    },
+    {
+      "id": "sym-5",
+      "name": "Neck Pain",
+      "visible": true
+    },
+    {
+      "id": "sym-6",
+      "name": "Back Pain",
+      "visible": true
+    },
+    {
+      "id": "sym-7",
+      "name": "Knee Pain",
+      "visible": true
+    },
+    {
+      "id": "sym-8",
+      "name": "Shoulder Pain",
+      "visible": true
+    },
+    {
+      "id": "sym-9",
+      "name": "Joint Pain",
+      "visible": true
+    },
+    {
+      "id": "sym-10",
+      "name": "Foot Pain",
+      "visible": true
+    },
+    {
+      "id": "sym-11",
+      "name": "Loss of Balance",
+      "visible": true
+    },
+    {
+      "id": "sym-12",
+      "name": "Tremors",
+      "visible": true
+    },
+    {
+      "id": "sym-13",
+      "name": "Headache",
+      "visible": true
+    },
+    {
+      "id": "sym-14",
+      "name": "Inflammation",
+      "visible": true
+    },
+    {
+      "id": "sym-15",
+      "name": "Sprains and Strains",
+      "visible": true
+    }
+  ],
+  "therapies": [
+    {
+      "id": "wwt-th-1",
+      "name": "Interferential Therapy (IFT)",
+      "visible": true
+    },
+    {
+      "id": "wwt-th-2",
+      "name": "Chiropractic Therapy",
+      "visible": true
+    },
+    {
+      "id": "wwt-th-3",
+      "name": "Ultrasound Therapy",
+      "visible": true
+    },
+    {
+      "id": "wwt-th-4",
+      "name": "Laser Therapy",
+      "visible": true
+    },
+    {
+      "id": "wwt-th-5",
+      "name": "Cupping Therapy",
+      "visible": true
+    },
+    {
+      "id": "wwt-th-6",
+      "name": "Dry Needling",
+      "visible": true
+    },
+    {
+      "id": "wwt-th-7",
+      "name": "Manual Therapy",
+      "visible": true
+    },
+    {
+      "id": "wwt-th-8",
+      "name": "Exercise Therapy",
+      "visible": true
+    },
+    {
+      "id": "wwt-th-9",
+      "name": "Kinesiology Taping",
+      "visible": true
+    },
+    {
+      "id": "wwt-th-10",
+      "name": "Joint Mobilisation",
+      "visible": true
+    },
+    {
+      "id": "wwt-th-11",
+      "name": "Muscle Energy Technique",
+      "visible": true
+    },
+    {
+      "id": "wwt-th-12",
+      "name": "Balance Training",
+      "visible": true
+    }
+  ],
+  "services": [
+    {
+      "id": "wwt-sv-1",
+      "name": "Chiropractor Treatment",
+      "visible": true
+    },
+    {
+      "id": "wwt-sv-2",
+      "name": "Neuro Physiotherapy – Rehab",
+      "visible": true
+    },
+    {
+      "id": "wwt-sv-3",
+      "name": "Sports Physiotherapy",
+      "visible": true
+    },
+    {
+      "id": "wwt-sv-4",
+      "name": "Paediatric Physiotherapy",
+      "visible": true
+    },
+    {
+      "id": "wwt-sv-5",
+      "name": "Geriatric Physiotherapy",
+      "visible": true
+    },
+    {
+      "id": "wwt-sv-6",
+      "name": "Home Care Physiotherapy",
+      "visible": true
+    },
+    {
+      "id": "wwt-sv-7",
+      "name": "Post-Surgical Rehabilitation",
+      "visible": true
+    },
+    {
+      "id": "wwt-sv-8",
+      "name": "Pain Management",
+      "visible": true
+    },
+    {
+      "id": "wwt-sv-9",
+      "name": "Mobility Rehabilitation",
+      "visible": true
+    },
+    {
+      "id": "wwt-sv-10",
+      "name": "Injury Prevention Programmes",
+      "visible": true
+    }
+  ]
+}

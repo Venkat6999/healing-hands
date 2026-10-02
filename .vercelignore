@@ -1,0 +1,37 @@
+# ============================================================
+#  Files excluded from the Vercel deployment
+# ============================================================
+
+node_modules/
+docs/
+legacy/
+
+# --- secrets: must never reach the deployment ---
+.env
+.env.local
+.env*.local
+
+# --- build tooling IS required (npm run build) — do not exclude scripts/ ---
+
+# --- data/: only these three are used at runtime ---
+#   content.default.json  bundled into the serverless function
+#   content-schema.json   bundled into the serverless function
+#   content.json          offline fallback when the API is unreachable
+# The rest are input for `npm run seed` only, so they stay out of the
+# bundle. Excluding passcode.json also keeps its hash off the deployment.
+data/appointments.json
+data/passcode.json
+data/doctors.json
+data/specialties.json
+data/services.json
+data/sectionCopy.json
+data/clinicInfo.json
+data/conditions.json
+data/therapies.json
+data/directory.json
+data/blogposts.json
+data/booking-options.json
+
+.vscode/
+.vercel
+*.log

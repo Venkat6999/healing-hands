@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Site Editor — Healing Hands</title>
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<!-- ================= LOGIN ================= -->
+<div class="login-screen" id="login-screen">
+  <form class="login-card" id="login-form">
+    <img src="images/logo.png" alt="Healing Hands logo" class="login-logo">
+    <h1>Site Editor</h1>
+    <p>Sign in to edit every part of the website.</p>
+    <label for="passcode">Passcode</label>
+    <input type="password" id="passcode" autocomplete="current-password" required>
+    <p class="login-error" id="login-error" hidden></p>
+    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+    <a href="index.html" class="login-back">← Back to the website</a>
+  </form>
+</div>
+
+<!-- ================= APP ================= -->
+<div class="admin-app" id="admin-app" hidden>
+
+  <aside class="admin-sidebar" id="admin-sidebar">
+    <div class="sidebar-brand">
+      <img src="images/logo.png" alt="">
+      <div>
+        <strong>Site Editor</strong>
+        <span>Healing Hands</span>
+      </div>
+    </div>
+    <nav class="sidebar-nav" id="sidebar-nav"></nav>
+    <button class="btn btn-ghost btn-block" id="logout-btn">Sign out</button>
+  </aside>
+
+  <div class="admin-main">
+    <header class="admin-topbar">
+      <button class="icon-btn menu-btn" id="menu-btn" aria-label="Menu">☰</button>
+      <div class="topbar-title">
+        <h1 id="view-title">Home page</h1>
+        <p id="view-sub">Edit every text, image and background on this page.</p>
+      </div>
+      <div class="topbar-actions">
+        <input type="search" id="field-search" placeholder="Search text on this page…" hidden>
+        <button class="btn btn-ghost" id="preview-toggle">Show preview</button>
+        <button class="btn btn-primary" id="save-btn" disabled>Saved</button>
+      </div>
+    </header>
+
+    <div class="admin-body">
+      <div class="admin-content" id="admin-content"></div>
+      <aside class="admin-preview" id="admin-preview" hidden>
+        <div class="preview-head">
+          <span>Live preview</span>
+          <div>
+            <button class="icon-btn" id="preview-reload" title="Reload">⟳</button>
+            <button class="icon-btn" id="preview-close" title="Close">✕</button>
+          </div>
+        </div>
+        <iframe id="preview-frame" title="Website preview"></iframe>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<!-- ================= IMAGE PICKER ================= -->
+<div class="modal" id="image-modal" hidden>
+  <div class="modal-card">
+    <div class="modal-head">
+      <h2>Choose an image</h2>
+      <button class="icon-btn" id="image-modal-close">✕</button>
+    </div>
+    <div class="modal-upload">
+      <label class="btn btn-primary" for="image-upload">Upload a new image</label>
+      <input type="file" id="image-upload" accept="image/*" hidden>
+      <span id="upload-status"></span>
+    </div>
+    <div class="image-grid" id="image-grid"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

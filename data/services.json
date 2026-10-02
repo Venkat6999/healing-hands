@@ -1,0 +1,34 @@
+[
+  {
+    "id": "sv-basic",
+    "title": "Basic treatment (any two electrotherapy modalities)",
+    "icon": "plus",
+    "visible": true,
+    "description": "Includes IFT, Ultrasound, TENS, Stimulator, Hydrocollator packs, Traction, Infrared radiation and Taping — any two modalities per session.",
+    "price": "400"
+  },
+  {
+    "id": "sv-manual",
+    "title": "Manual therapy",
+    "icon": "tools",
+    "visible": true,
+    "description": "Hands-on techniques including joint mobilisation, manipulation and soft tissue work to restore movement and reduce pain.",
+    "price": "500"
+  },
+  {
+    "id": "sv-cupping",
+    "title": "Cupping therapy",
+    "icon": "clock",
+    "visible": true,
+    "description": "An ancient healing practice with a strong place in modern physiotherapy — used for pain relief, muscle recovery and improving blood flow.",
+    "price": "600"
+  },
+  {
+    "id": "sv-dryneedle",
+    "title": "Dry needle therapy",
+    "icon": "pulse",
+    "visible": true,
+    "description": "Also known as Trigger Point Dry Needling — a procedure using thin needles to release myofascial trigger points and relieve muscle pain.",
+    "price": "800"
+  }
+]

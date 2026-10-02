@@ -1,0 +1,24 @@
+[
+  {
+    "id": "doc-prakash",
+    "name": "Dr. A. Prakash",
+    "role": "Physiotherapist",
+    "roleAbout": "Physiotherapist · Evenings",
+    "credentials": "BPT, PIAP, CMT",
+    "bio": "Dr. Prakash is specialised in Dry Needling, Advanced pain management and pelvic floor rehabilitation therapies.",
+    "bioAbout": "Dr. Prakash is specialised in Dry Needling, Advanced pain management and pelvic floor rehabilitation therapies.",
+    "photo": "images/doctor-prakash.jpeg",
+    "visible": true
+  },
+  {
+    "id": "doc-kalyani",
+    "name": "Dr. U. Kalyani",
+    "role": "Physiotherapist",
+    "roleAbout": "Physiotherapist · Morning & afternoon",
+    "credentials": "BPT, MIAP",
+    "bio": "Dr. Kalyani sees patients through the day, focusing on musculoskeletal pain, post-injury rehab and personalised exercise plans.",
+    "bioAbout": "Dr. Kalyani works with patients on musculoskeletal pain, joint conditions and rehabilitation after injury, combining manual assessment with structured home exercise guidance.",
+    "photo": "images/doctor-kalyani.jpeg",
+    "visible": true
+  }
+]

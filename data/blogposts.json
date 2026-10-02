@@ -1,0 +1,29 @@
+[
+  {
+    "id": "post-1",
+    "title": "Why your lower back hurts after a long day at a desk",
+    "summary": "A look at common posture habits that lead to stiffness, and simple stretches to try between meetings.",
+    "body": "Most desk-related lower back pain is not caused by one bad position. It builds up quietly, over hundreds of small moments: a chair too low, a screen at the wrong height, a laptop balanced on a lap.\n\nStart with the two movements that help most people most quickly. First, gentle knee-to-chest rocking, lying on your back with both knees bent, for one minute at a time. Second, a hip-flexor stretch, because tight hips make the lower back work harder just to stand up straight.\n\nIf the pain wakes you at night, travels down the leg, or comes with numbness or weakness, book an assessment rather than stretching through it.",
+    "tag": "Back Pain",
+    "date": "",
+    "visible": true
+  },
+  {
+    "id": "post-2",
+    "title": "Ankle sprain? Here's what to do in the first 48 hours",
+    "summary": "How to manage a fresh sprain at home, and when it's time to come in for an assessment.",
+    "body": "The first two days decide how long a sprain takes to settle. Protect it, rest it, ice it in the early phase, compress it and keep it elevated above hip height as much as you can.\n\nKeep weight off the ankle for the first day or two, then begin gentle range-of-movement work as soon as swelling settles. Movement early prevents the stiffness that makes ankle sprains drag on for months.\n\nYou should be assessed if you cannot take four steps, if there is bony tenderness over the ankle knobs, or if swelling has not clearly improved after a week.",
+    "tag": "Sports Injuries",
+    "date": "",
+    "visible": true
+  },
+  {
+    "id": "post-3",
+    "title": "What to expect in your first physiotherapy session",
+    "summary": "From assessment to treatment plan — a walkthrough of your first visit to the clinic.",
+    "body": "Your first session is mostly conversation and assessment. We ask what happened, how it affects your day, and what you have already tried. Then we look at how you move.\n\nYou will be shown a few movements so we can watch your posture, hip and shoulder mechanics, and strength. Nothing in this stage should be painful.\n\nYou leave with a clear plan: what we will work on, roughly how many sessions, and two or three exercises to start at home. Bring comfortable clothing and any scan reports or previous notes if you have them.",
+    "tag": "Recovery",
+    "date": "",
+    "visible": true
+  }
+]

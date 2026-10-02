@@ -1,0 +1,14 @@
+
+# never commit real credentials or generated build artefacts
+.env
+.env.local
+.env*.local
+node_modules/
+.vscode/
+.vercel
+*.log
+
+# the admin passcode hash is machine-local state, not source
+data/passcode.json
+data/appointments.json
+uploads/

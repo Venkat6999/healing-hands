@@ -1,0 +1,16 @@
+# normalise line endings so the same files behave on Windows and Linux
+* text=auto eol=lf
+
+# keep images byte-identical (never re-encode)
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.avif binary
+*.gif binary
+*.ico binary
+
+# these must stay LF
+*.sh text eol=lf
+vercel.json text eol=lf
+.gitattributes text eol=lf
