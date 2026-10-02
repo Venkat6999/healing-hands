@@ -20,6 +20,23 @@
   var store = {};
   var lastVersion = -1;
 
+  /* The backend is one Function mounted at /api, so the logical route travels
+     in the X-HH-Route header rather than the URL. Without this every request
+     404s, no saved content is applied to the page, and edits made in the admin
+     panel appear to have no effect. */
+  function routeFetch(route, opts) {
+    var options = opts || {};
+    var headers = { 'X-HH-Route': route };
+    if (options.headers) {
+      Object.keys(options.headers).forEach(function (k) { headers[k] = options.headers[k]; });
+    }
+    return fetch(API, {
+      method: options.method || 'GET',
+      cache: options.cache || 'no-store',
+      headers: headers
+    });
+  }
+
   function apply(root) {
     var doc = root || document;
 
@@ -54,7 +71,7 @@
   }
 
   function load() {
-    return fetch(API + '/content', { cache: 'no-store' })
+    return routeFetch('/content')
       .then(function (res) { if (!res.ok) throw new Error('no api'); return res.json(); })
       .catch(function () {
         return fetch('/data/content.json', { cache: 'no-store' })
@@ -69,7 +86,7 @@
   }
 
   function poll() {
-    fetch(API + '/version', { cache: 'no-store' })
+    routeFetch('/version')
       .then(function (res) { return res.json(); })
       .then(function (data) {
         if (data.version !== lastVersion) {

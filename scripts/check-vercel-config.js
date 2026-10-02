@@ -74,10 +74,33 @@ const idx = path.join(ROOT, 'api', 'index.js');
 if (fs.existsSync(idx)) {
   const src = fs.readFileSync(idx, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
   if (!/x-hh-route/i.test(src)) problems.push('api/index.js must read the x-hh-route header');
-  const client = fs.readFileSync(path.join(ROOT, 'js', 'site-data.js'), 'utf8');
-  if (!/X-HH-Route/.test(client)) problems.push('js/site-data.js must send X-HH-Route');
-  const admin = fs.readFileSync(path.join(ROOT, 'js', 'admin.js'), 'utf8');
-  if (!/X-HH-Route/.test(admin)) problems.push('js/admin.js must send X-HH-Route');
+}
+
+/* Every client file that talks to the API must send the header, and none may
+   build an old-style path like API + '/content'. js/cms.js was missed once and
+   every public page silently stopped applying saved content, which looked like
+   "my edits are not appearing" and "the preview is broken". */
+const CLIENT_API = ['cms.js', 'site-data.js', 'admin.js', 'appointment.js', 'main.js'];
+const jsDir = path.join(ROOT, 'js');
+if (fs.existsSync(jsDir)) {
+  for (const name of CLIENT_API) {
+    const f = path.join(jsDir, name);
+    if (!fs.existsSync(f)) continue;
+    const src = fs.readFileSync(f, 'utf8');
+    const code = src.replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '');
+    // does this file talk to the API at all?
+    const talks = /['"`]\/api['"`]/.test(code) || /\+\s*['"`]\/(content|version|doctors|specialties|services|section-copy|clinic-info|conditions|therapies|directory|blogposts|bookingoptions|auth|appointments|backup|images|reset|upload)/.test(code);
+    if (!talks) continue;
+    const legacy = /\+\s*(API|API_BASE)\s*\+\s*['"`]\//.test(code)
+      || /fetch\s*\(\s*(API|API_BASE)\s*\+\s*['"`]\//.test(code);
+    if (legacy) {
+      problems.push('js/' + name + ' still builds the old API + "/endpoint" path, which 404s');
+      continue;
+    }
+    if (!/X-HH-Route/.test(code)) {
+      problems.push('js/' + name + ' calls the API but never sends X-HH-Route -- its requests will 404');
+    }
+  }
 }
 
 console.log('\n=== deployment configuration ===\n');
