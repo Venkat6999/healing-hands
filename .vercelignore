@@ -11,7 +11,10 @@ legacy/
 .env.local
 .env*.local
 
-# --- build tooling IS required (npm run build) — do not exclude scripts/ ---
+# --- build tooling IS required (npm run build) - do not exclude scripts/ ---
+
+# NOTE: never use a bare `uploads/` here either. It would also exclude
+# api/uploads/, which holds a Serverless Function.
 
 # --- data/: only these three are used at runtime ---
 #   content.default.json  bundled into the serverless function
