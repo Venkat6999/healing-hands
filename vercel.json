@@ -6,17 +6,6 @@
   "buildCommand": "npm run build",
   "outputDirectory": ".",
 
-  "functions": {
-    "api/*.js": {
-      "memory": 1024,
-      "maxDuration": 30
-    },
-    "api/uploads/*.js": {
-      "memory": 256,
-      "maxDuration": 10
-    }
-  },
-
   "rewrites": [
     { "source": "/", "destination": "/pages/index.html" },
     { "source": "/index.html", "destination": "/pages/index.html" },
@@ -26,8 +15,7 @@
     { "source": "/blog.html", "destination": "/pages/blog.html" },
     { "source": "/faq.html", "destination": "/pages/faq.html" },
     { "source": "/book-appointment.html", "destination": "/pages/book-appointment.html" },
-    { "source": "/admin.html", "destination": "/pages/admin.html" },
-    { "source": "/uploads/:path*", "destination": "/api/uploads/:path*" }
+    { "source": "/admin.html", "destination": "/pages/admin.html" }
   ],
 
   "headers": [

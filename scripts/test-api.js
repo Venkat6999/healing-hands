@@ -34,7 +34,7 @@ if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
   process.exit(1);
 }
 
-const handler = require(path.join(ROOT, 'api', '[...path].js'));
+const handler = require(path.join(ROOT, 'lib', 'handler.js'));
 
 /* ---------- mock req/res ---------- */
 
