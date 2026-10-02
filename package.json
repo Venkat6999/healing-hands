@@ -1,14 +1,14 @@
 {
   "name": "healing-hands-site",
-  "version": "3.0.0",
-  "description": "Healing Hands Advanced Physiotherapy Clinic website — Vercel + Supabase",
+  "version": "3.1.0",
+  "description": "Healing Hands Advanced Physiotherapy Clinic website — Express on Vercel + Supabase",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "build": "node scripts/build-image-manifest.js",
+    "manifest": "node scripts/build-image-manifest.js",
     "seed": "node scripts/seed.js",
     "seed:force": "node scripts/seed.js --force",
-    "test": "node scripts/check-routes-http.js && node scripts/test-api.js"
+    "test": "node scripts/check-vercel-config.js && node scripts/check-routes-http.js && node scripts/test-api.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.4",
