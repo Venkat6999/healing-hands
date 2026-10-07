@@ -573,7 +573,7 @@
       fillSelect('#appt-city', opts.cities);
       fillSelect('#appt-treatment', opts.treatments);
       fillSelect('#appt-service', opts.services);
-      fillSelect('#appt-slot', opts.slots, 'Select Session');
+      fillSelect('#appt-slot', opts.slots, 'Select Time');
     }
   };
 
