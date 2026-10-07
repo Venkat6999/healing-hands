@@ -48,7 +48,13 @@
     doc.querySelectorAll('[data-cms-img]').forEach(function (el) {
       var key = el.getAttribute('data-cms-img');
       var value = store[key];
-      if (value) el.setAttribute('src', value);
+      if (value) {
+        el.setAttribute('src', value);
+        // a responsive srcset keeps showing the old photo in the browser
+        // even after src changes, so drop it when the CMS drives the image
+        el.removeAttribute('srcset');
+        el.removeAttribute('sizes');
+      }
     });
 
     doc.querySelectorAll('[data-cms-alt]').forEach(function (el) {
