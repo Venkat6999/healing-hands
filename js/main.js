@@ -139,9 +139,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (thumb) {
         thumbEl.style.background = thumb.style.background || '';
       } else if (img) {
-        thumbEl.style.background = '#153C33 url("' + img.getAttribute('src') + '") center/cover no-repeat';
+        thumbEl.style.background = '#0F2A5A url("' + img.getAttribute('src') + '") center/cover no-repeat';
       } else {
-        thumbEl.style.background = 'linear-gradient(135deg,#1c7fc4,#5fb24a)';
+        thumbEl.style.background = 'linear-gradient(135deg,#2563EB,#38BDF8)';
       }
 
       bodyEl.innerHTML = '';
@@ -392,12 +392,20 @@ document.addEventListener('DOMContentLoaded', () => {
       if (el.querySelector('.char')) return;
       const text = el.textContent.trim();
       el.innerHTML = '';
-      text.split('').forEach((char, i) => {
-        const span = document.createElement('span');
-        span.className = 'char';
-        span.textContent = char === ' ' ? '\u00A0' : char;
-        span.style.transitionDelay = `${i * 0.015}s`;
-        el.appendChild(span);
+      let ci = 0;
+      text.split(' ').forEach((word, wi, arr) => {
+        const w = document.createElement('span');
+        w.className = 'word';
+        word.split('').forEach((char) => {
+          const span = document.createElement('span');
+          span.className = 'char';
+          span.textContent = char;
+          span.style.transitionDelay = `${ci * 0.015}s`;
+          ci += 1;
+          w.appendChild(span);
+        });
+        el.appendChild(w);
+        if (wi < arr.length - 1) el.appendChild(document.createTextNode(' '));
       });
       if (textObserver) textObserver.observe(el);
       else el.classList.add('animated');

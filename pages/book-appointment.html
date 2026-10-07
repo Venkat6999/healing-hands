@@ -2,7 +2,7 @@
   <base href="/">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#153C33">
+<meta name="theme-color" content="#0F2A5A">
 <title>Book Your Appointment | Healing Hands Physiotherapy, Warangal</title>
 <meta name="description" content="Book your physiotherapy appointment at Healing Hands Advanced Physiotherapy Clinic, Hanamkonda, Warangal. Choose your treatment, service type, date and time slot.">
 <meta property="og:title" content="Book Your Appointment | Healing Hands Physiotherapy">
@@ -131,16 +131,21 @@
           </div>
 
           <div class="appt-field">
-            <label for="appt-date" data-cms="book-appointment.t25">Select Date &amp; Time Slot</label>
-            <div class="appt-row">
-              <input type="date" id="appt-date" name="date" required="">
-              <select id="appt-slot" name="slot" required="">
-                <option>Morning</option>
-                <option>Afternoon</option>
-                <option>Evening</option>
-              </select>
-            </div>
+            <label for="appt-date" data-cms="book-appointment.t25">Select Date</label>
+            <input type="date" id="appt-date" name="date" required="">
             <span class="appt-error" data-error-for="appt-date"></span>
+          </div>
+
+          <div class="appt-field">
+            <label for="appt-slot">Select Session</label>
+            <select id="appt-slot" name="slot" required="">
+              <option value="">Select Session</option>
+              <option>Morning (10 AM - 12 PM)</option>
+              <option>Afternoon (12 PM - 4 PM)</option>
+              <option>Evening (4 PM - 8 PM)</option>
+            </select>
+            <small class="appt-hint">Morning: 10 AM – 12 PM &nbsp;|&nbsp; Afternoon: 12 PM – 4 PM &nbsp;|&nbsp; Evening: 4 PM – 8 PM</small>
+            <span class="appt-error" data-error-for="appt-slot"></span>
           </div>
 
           <button type="submit" class="appt-submit" data-cms="book-appointment.t27">Submit</button>
@@ -151,7 +156,7 @@
         </form>
 
         <div class="appt-extra-links">
-          <a href="https://maps.google.com/?q=Healing+Hands+Advanced+Physiotherapy+Clinic+Hanamkonda+Warangal" target="_blank" class="btn btn-primary" data-cms="book-appointment.t33" data-cms-href="book-appointment.href34">Direction</a>
+          <a href="https://maps.google.com/?q=Healing+Hands+Advanced+Physiotherapy+Clinic+Hanamkonda+Warangal" target="_blank" rel="noopener" class="btn btn-primary" data-cms="book-appointment.t33" data-cms-href="book-appointment.href34">Direction</a>
         </div>
       </div>
     </div>
@@ -198,6 +203,7 @@
         <p data-hh-address="">H.No: 1-7-1204, Advocate's Colony Main Road<br>Hanamkonda, Warangal, Telangana 506001</p>
         <p data-hh-hours-short="">Mon-Sat: 10:00 AM - 8:30 PM | Sun: 3:00 PM - 8:30 PM</p>
         <p><a data-hh-phone-href="" href="tel:+918523841691"><span data-hh-phone="">+91 85238 41691</span></a></p>
+        <p><a data-hh-phone2-href="" href="tel:+919573226873"><span data-hh-phone2="">+91 95732 26873</span></a></p>
       </div>
     </div>
     <div class="footer-bottom">

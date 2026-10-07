@@ -131,6 +131,16 @@
             "label": "Button link — Book Appointment →"
           },
           {
+            "key": "index.t127",
+            "type": "text",
+            "label": "Direction button text"
+          },
+          {
+            "key": "index.href127",
+            "type": "text",
+            "label": "Button link — Direction"
+          },
+          {
             "key": "index.t21",
             "type": "text",
             "label": "Explore care"

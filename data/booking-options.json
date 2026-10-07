@@ -18,8 +18,8 @@
     "Home Care Visit"
   ],
   "slots": [
-    "Morning",
-    "Afternoon",
-    "Evening"
+    "Morning (10 AM - 12 PM)",
+    "Afternoon (12 PM - 4 PM)",
+    "Evening (4 PM - 8 PM)"
   ]
 }

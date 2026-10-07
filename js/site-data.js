@@ -39,12 +39,12 @@
   ];
 
   var ICONS = {
-    plus:     '<path d="M12 4v16M4 12h16" stroke="#1c7fc4" stroke-width="1.6" stroke-linecap="round"/>',
-    activity: '<path d="M3 12h4l2-7 4 14 2-7h6" stroke="#1c7fc4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>',
-    pulse:    '<path d="M6 12h3l2-6 4 12 2-6h3" stroke="#1c7fc4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>',
-    clock:    '<circle cx="12" cy="12" r="9" stroke="#1c7fc4" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="#1c7fc4" stroke-width="1.6" stroke-linecap="round"/>',
-    home:     '<path d="M12 3v18M5 8l7-5 7 5M5 8v9a3 3 0 003 3h8a3 3 0 003-3V8" stroke="#1c7fc4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>',
-    tools:    '<path d="M4 20l6-6M14 4l6 6-8 8-6-6 8-8Z" stroke="#1c7fc4" stroke-width="1.6" stroke-linejoin="round"/>'
+    plus:     '<path d="M12 4v16M4 12h16" stroke="#159A9C" stroke-width="1.6" stroke-linecap="round"/>',
+    activity: '<path d="M3 12h4l2-7 4 14 2-7h6" stroke="#159A9C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>',
+    pulse:    '<path d="M6 12h3l2-6 4 12 2-6h3" stroke="#159A9C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>',
+    clock:    '<circle cx="12" cy="12" r="9" stroke="#159A9C" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="#159A9C" stroke-width="1.6" stroke-linecap="round"/>',
+    home:     '<path d="M12 3v18M5 8l7-5 7 5M5 8v9a3 3 0 003 3h8a3 3 0 003-3V8" stroke="#159A9C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>',
+    tools:    '<path d="M4 20l6-6M14 4l6 6-8 8-6-6 8-8Z" stroke="#159A9C" stroke-width="1.6" stroke-linejoin="round"/>'
   };
 
   var DEFAULT_SERVICES = [
@@ -61,7 +61,7 @@
   };
 
   var DEFAULT_CLINIC_INFO = {
-    phone: '+918523841691', whatsapp: '918523841691',
+    phone: '+918523841691', phone2: '+919573226873', whatsapp: '918523841691',
     address: "H.No: 1-7-1204, Advocate's Colony Main Road, Opposite: Canara Bank, Beside: Blue Star A/C Showroom, Balasamudram, Hanamkonda, Telangana 506001",
     addressLine1: "H.No: 1-7-1204, Advocate's Colony Main Road", addressCity: 'Hanamkonda, Warangal, Telangana 506001',
     hoursDays: 'Mon-Sun', hoursOpen: '10:00 AM', hoursClose: '8:30 PM',
@@ -411,6 +411,15 @@
 
       doc.querySelectorAll('[data-hh-phone]').forEach(function (el) { el.textContent = info.phone; });
       doc.querySelectorAll('[data-hh-phone-href]').forEach(function (el) { el.setAttribute('href', 'tel:' + info.phone); });
+      doc.querySelectorAll('[data-hh-phone2]').forEach(function (el) {
+        el.textContent = info.phone2 || '';
+        var p = el.closest('p');
+        if (p) p.style.display = info.phone2 ? '' : 'none';
+      });
+      doc.querySelectorAll('[data-hh-phone2-href]').forEach(function (el) {
+        el.setAttribute('href', 'tel:' + (info.phone2 || ''));
+        if (!info.phone2 && el.tagName === 'P') el.style.display = 'none';
+      });
       doc.querySelectorAll('[data-hh-wa-href]').forEach(function (el) { el.setAttribute('href', 'https://wa.me/' + info.whatsapp); });
       doc.querySelectorAll('[data-hh-address]').forEach(function (el) { el.innerHTML = info.addressLine1 + '<br>' + info.addressCity; });
       doc.querySelectorAll('[data-hh-hours]').forEach(function (el) { el.textContent = info.hoursFull; });
@@ -548,11 +557,13 @@
       var doc = root || document;
       var opts = HH.getBookingOptions();
 
-      function fillSelect(selector, values) {
+      function fillSelect(selector, values, placeholder) {
         doc.querySelectorAll(selector).forEach(function (sel) {
           if (!Array.isArray(values) || !values.length) return;
           var current = sel.value;
-          sel.innerHTML = '<option value="">Select</option>' + values.map(function (v) {
+          var first = sel.querySelector('option[value=""]');
+          var label = placeholder || (first && first.textContent) || 'Select';
+          sel.innerHTML = '<option value="">' + HH.esc(label) + '</option>' + values.map(function (v) {
             return '<option>' + HH.esc(v) + '</option>';
           }).join('');
           if (current && values.indexOf(current) !== -1) sel.value = current;
@@ -562,7 +573,7 @@
       fillSelect('#appt-city', opts.cities);
       fillSelect('#appt-treatment', opts.treatments);
       fillSelect('#appt-service', opts.services);
-      fillSelect('#appt-slot', opts.slots);
+      fillSelect('#appt-slot', opts.slots, 'Select Session');
     }
   };
 

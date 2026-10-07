@@ -7,8 +7,8 @@
   --line: #e2eae7;
   --bg: #f3f6f5;
   --card: #ffffff;
-  --primary: #153c33;
-  --accent: #619e90;
+  --primary: #0F2A5A;
+  --accent: #2563EB;
   --danger: #c0453c;
   --radius: 14px;
   --shadow: 0 10px 30px rgba(18, 33, 30, 0.08);
@@ -36,7 +36,7 @@ h1, h2, h3, h4 { font-family: 'Archivo', system-ui, sans-serif; margin: 0; }
   text-decoration: none;
 }
 .btn-primary { background: var(--primary); color: #fff; }
-.btn-primary:hover { background: #1d5146; }
+.btn-primary:hover { background: #1D4ED8; }
 .btn-primary:disabled { background: #b9c7c3; cursor: default; }
 .btn-ghost { background: #fff; border-color: var(--line); color: var(--ink); }
 .btn-ghost:hover { border-color: var(--accent); color: var(--primary); }
@@ -54,7 +54,7 @@ h1, h2, h3, h4 { font-family: 'Archivo', system-ui, sans-serif; margin: 0; }
 /* ---------- Login ---------- */
 .login-screen {
   min-height: 100vh; display: grid; place-items: center; padding: 24px;
-  background: radial-gradient(1000px 600px at 20% 0%, #27574a 0%, #153c33 60%, #0d2a24 100%);
+  background: radial-gradient(1000px 600px at 20% 0%, #2563EB 0%, #0F2A5A 55%, #0A1F44 100%);
 }
 .login-card {
   width: 100%; max-width: 380px; background: #fff; border-radius: 20px;

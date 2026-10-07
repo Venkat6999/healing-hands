@@ -174,12 +174,13 @@
       state.blogposts = r[11] || [];
       state.bookingoptions = r[12] || { cities: [], treatments: [], services: [], slots: [] };
       buildNav();
-      setView(state.view || (state.schema[0] ? 'page:' + state.schema[0].page : 'doctors'));
+      setView(state.view || 'appointments');
     }).catch(function (err) { toast(err.message, true); });
   }
 
   /* ---------------- navigation ---------------- */
   var SECTIONS = [
+    { id: 'appointments', label: 'Appointments', sub: 'Booking requests sent from the website.' },
     { id: 'doctors', label: 'Doctors', sub: 'Photos, names and descriptions of your physiotherapists.' },
     { id: 'specialties', label: 'Specialties carousel', sub: 'The scrolling cards of physiotherapy specialties.' },
     { id: 'services', label: 'Treatments & pricing', sub: 'Treatment cards and their prices.' },
@@ -189,18 +190,20 @@
     { id: 'directory', label: 'What We Treat lists', sub: 'Symptoms, therapies and services listed on the What We Treat page.' },
     { id: 'bookingoptions', label: 'Booking form options', sub: 'Cities, treatment types, service types and time slots.' },
     { id: 'clinic', label: 'Contact & hours', sub: 'Phone, WhatsApp, address and opening hours used across the site.' },
-    { id: 'appointments', label: 'Appointments', sub: 'Booking requests sent from the website.' },
     { id: 'settings', label: 'Settings & backup', sub: 'Passcode, backups and resetting content.' }
   ];
 
   function buildNav() {
     var nav = $('#sidebar-nav');
-    var html = '<div class="nav-group-label">Website pages</div>';
+    var html = '<div class="nav-group-label">Bookings</div>' +
+      '<button class="nav-item" data-view="appointments">Appointments</button>';
+    html += '<div class="nav-group-label">Website pages</div>';
     state.schema.forEach(function (page) {
       html += '<button class="nav-item" data-view="page:' + esc(page.page) + '">' + esc(page.label) + '</button>';
     });
     html += '<div class="nav-group-label">Content blocks</div>';
     SECTIONS.forEach(function (section) {
+      if (section.id === 'appointments') return;
       html += '<button class="nav-item" data-view="' + section.id + '">' + esc(section.label) + '</button>';
     });
     nav.innerHTML = html;
