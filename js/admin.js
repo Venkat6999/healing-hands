@@ -33,6 +33,7 @@
     directory: { symptoms: [], therapies: [], services: [] },
     blogposts: [],
     bookingoptions: { cities: [], treatments: [], services: [], slots: [] },
+    gallery: [],
     view: null,
     dirty: false,
     search: ''
@@ -158,7 +159,8 @@
       get('/therapies').catch(function () { return { groups: [] }; }),
       get('/directory').catch(function () { return { symptoms: [], therapies: [], services: [] }; }),
       get('/blogposts').catch(function () { return []; }),
-      get('/bookingoptions').catch(function () { return { cities: [], treatments: [], services: [], slots: [] }; })
+      get('/bookingoptions').catch(function () { return { cities: [], treatments: [], services: [], slots: [] }; }),
+      get('/gallery').catch(function () { return []; })
     ]).then(function (r) {
       state.schema = r[0] || [];
       state.content = r[1] || {};
@@ -173,6 +175,16 @@
       state.directory = r[10] || { symptoms: [], therapies: [], services: [] };
       state.blogposts = r[11] || [];
       state.bookingoptions = r[12] || { cities: [], treatments: [], services: [], slots: [] };
+      state.gallery = r[13] || [];
+      if (!state.gallery.length) {
+        // Fresh database (or emptied list): start from the two photos the
+        // home page already shows, so adding a photo keeps them instead of
+        // wiping them on the next save.
+        state.gallery = [
+          { id: 'gal-cupping', img: 'images/patient-cupping-therapy.jpeg', alt: 'Patient receiving cupping therapy on the upper back and neck', caption: 'Cupping therapy for neck & upper back tightness', visible: true },
+          { id: 'gal-dryneedling', img: 'images/patient-dry-needling.jpeg', alt: 'Patient receiving dry needling at the neck', caption: 'Dry needling for neck pain', visible: true }
+        ];
+      }
       buildNav();
       setView(state.view || 'appointments');
     }).catch(function (err) { toast(err.message, true); });
@@ -182,6 +194,7 @@
   var SECTIONS = [
     { id: 'appointments', label: 'Appointments', sub: 'Booking requests sent from the website.' },
     { id: 'doctors', label: 'Doctors', sub: 'Photos, names and descriptions of your physiotherapists.' },
+    { id: 'gallery', label: 'Treatments in action', sub: 'Patient session photos shown below the team on the home page. Add, reorder or hide images.' },
     { id: 'specialties', label: 'Specialties carousel', sub: 'The scrolling cards of physiotherapy specialties.' },
     { id: 'services', label: 'Treatments & pricing', sub: 'Treatment cards and their prices.' },
     { id: 'therapies', label: 'Therapies', sub: 'Basic and Advanced therapy lists shown on the Services page.' },
@@ -662,6 +675,17 @@
         { key: 'services', label: 'Service types' },
         { key: 'slots', label: 'Time slots' }
       ]
+    },
+    gallery: {
+      label: 'Treatments in action', file: 'index.html', shape: 'array',
+      title: function (i) { return state.gallery[i].caption || 'Photo ' + (i + 1); },
+      add: function () { state.gallery.push({ id: uid('gal'), img: 'images/patient-cupping-therapy.jpeg', alt: '', caption: 'New treatment photo', visible: true }); },
+      fields: function (i) {
+        var g = state.gallery[i];
+        return imageField('Photo', 'gallery', i, 'img', g.img) +
+          listText('Caption shown below photo', 'gallery', i, 'caption', g.caption) +
+          listText('Image description (alt text)', 'gallery', i, 'alt', g.alt);
+      }
     }
   };
 
@@ -673,7 +697,8 @@
 
     var html = '';
     if (R.shape === 'array') {
-      html += '<div class="toolbar"><button class="btn btn-primary" id="res-add">+ Add a new ' + (name === 'blogposts' ? 'post' : 'condition') + '</button></div>';
+      var addLabel = name === 'blogposts' ? 'post' : (name === 'gallery' ? 'photo' : 'condition');
+      html += '<div class="toolbar"><button class="btn btn-primary" id="res-add">+ Add a new ' + addLabel + '</button></div>';
       state[name].forEach(function (item, i) {
         html += '<div class="row-card">' +
           '<div class="row-head"><strong>' + esc(R.title(i)) + '</strong>' +
@@ -982,7 +1007,8 @@
       post('/therapies', state.therapies),
       post('/directory', state.directory),
       post('/blogposts', state.blogposts),
-      post('/bookingoptions', state.bookingoptions)
+      post('/bookingoptions', state.bookingoptions),
+      post('/gallery', state.gallery)
     ]).then(function () {
       markClean();
       toast('Saved — the website is updated');

@@ -59,7 +59,8 @@ app.get('/', (req, res) => res.sendFile(path.join(ROOT, 'pages', 'index.html')))
 app.use('/lib', (req, res) => res.status(404).send('Not found'));
 [
   'appointments', 'passcode', 'doctors', 'specialties', 'services', 'sectionCopy',
-  'clinicInfo', 'conditions', 'therapies', 'directory', 'blogposts', 'booking-options'
+  'clinicInfo', 'conditions', 'therapies', 'directory', 'blogposts', 'booking-options',
+  'gallery'
 ].forEach((name) => {
   app.get('/data/' + name + '.json', (req, res) => res.status(404).send('Not found'));
 });

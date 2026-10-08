@@ -36,6 +36,7 @@ data/therapies.json
 data/directory.json
 data/blogposts.json
 data/booking-options.json
+data/gallery.json
 
 .vscode/
 .vercel

@@ -76,7 +76,8 @@ Object.keys(RESOURCES).forEach((name) => {
   PLAN.push({
     key: RESOURCES[name].key,
     file: { conditions: 'conditions.json', therapies: 'therapies.json', directory: 'directory.json',
-            blogposts: 'blogposts.json', bookingoptions: 'booking-options.json' }[name],
+            blogposts: 'blogposts.json', bookingoptions: 'booking-options.json',
+            gallery: 'gallery.json' }[name],
     fallback: () => resourceDefault(name)
   });
 });

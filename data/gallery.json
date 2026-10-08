@@ -1,0 +1,16 @@
+[
+  {
+    "id": "gal-cupping",
+    "img": "images/patient-cupping-therapy.jpeg",
+    "alt": "Patient receiving cupping therapy on the upper back and neck",
+    "caption": "Cupping therapy for neck & upper back tightness",
+    "visible": true
+  },
+  {
+    "id": "gal-dryneedling",
+    "img": "images/patient-dry-needling.jpeg",
+    "alt": "Patient receiving dry needling at the neck",
+    "caption": "Dry needling for neck pain",
+    "visible": true
+  }
+]

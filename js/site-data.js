@@ -68,6 +68,14 @@
     hoursFull: 'Mon-Sat: 10:00 AM - 8:30 PM | Sun: 3:00 PM - 8:30 PM', hoursShort: 'Mon-Sat: 10:00 AM - 8:30 PM | Sun: 3:00 PM - 8:30 PM'
   };
 
+  // Treatments-in-action gallery shown below the team (employees) on the home page.
+  // Managed from Admin -> "Treatments in action". Falls back to these two photos
+  // when the API has never been seeded.
+  var DEFAULT_GALLERY = [
+    { id: 'gal-cupping', img: 'images/patient-cupping-therapy.jpeg', alt: 'Patient receiving cupping therapy on the upper back and neck', caption: 'Cupping therapy for neck & upper back tightness', visible: true },
+    { id: 'gal-dryneedling', img: 'images/patient-dry-needling.jpeg', alt: 'Patient receiving dry needling at the neck', caption: 'Dry needling for neck pain', visible: true }
+  ];
+
   var STATUSES = ['New', 'Confirmed', 'Completed', 'Cancelled'];
 
   /* ---------- In-memory cache ---------- */
@@ -82,7 +90,8 @@
     therapies: null,
     directory: null,
     blogposts: null,
-    bookingoptions: null
+    bookingoptions: null,
+    gallery: null
   };
 
   var serverVersion = 0;
@@ -176,7 +185,7 @@
         Math.random().toString(36).slice(2, 7);
     },
     clone: function (value) { return JSON.parse(JSON.stringify(value)); },
-    defaults: { doctors: DEFAULT_DOCTORS, specialties: DEFAULT_SPECIALTIES, services: DEFAULT_SERVICES, sectionCopy: DEFAULT_SECTION_COPY },
+    defaults: { doctors: DEFAULT_DOCTORS, specialties: DEFAULT_SPECIALTIES, services: DEFAULT_SERVICES, sectionCopy: DEFAULT_SECTION_COPY, gallery: DEFAULT_GALLERY },
 
     /* ----- Data getters (from cache, fallback to API, fallback to defaults) ----- */
 
@@ -232,6 +241,13 @@
       return cache.bookingoptions || { cities: [], treatments: [], services: [], slots: [] };
     },
 
+    getGallery: function () {
+      // An empty list means "never customised" (fresh DB) — show the two
+      // photos the home page ships with instead of a blank section.
+      if (Array.isArray(cache.gallery) && cache.gallery.length) return cache.gallery;
+      return DEFAULT_GALLERY;
+    },
+
     isVisible: function (item) {
       return Boolean(item) && item.visible !== false;
     },
@@ -261,6 +277,11 @@
     saveClinicInfo: function (info) {
       cache.clinicInfo = info;
       return apiPost('/clinic-info', info);
+    },
+
+    saveGallery: function (list) {
+      cache.gallery = list;
+      return apiPost('/gallery', list);
     },
 
     saveAppointments: function (list) {
@@ -444,6 +465,21 @@
       }
     },
 
+    renderGallery: function (root) {
+      var doc = root || document;
+      var host = doc.querySelector('[data-hh-treatment-gallery]');
+      if (!host) return;
+      var items = HH.getGallery().filter(function (g) { return g.visible !== false && g.img; });
+      if (!items.length) return; // keep static fallback HTML in the page
+      host.innerHTML = items.map(function (item, i) {
+        var delay = (i * 100) + 'ms';
+        return '<figure class="reveal-zoom" style="transition-delay: ' + delay + ';">' +
+          '<img src="' + HH.esc(item.img) + '" alt="' + HH.esc(item.alt || item.caption || 'Treatment photo') + '" loading="lazy" decoding="async">' +
+          (item.caption ? '<figcaption>' + HH.esc(item.caption) + '</figcaption>' : '') +
+        '</figure>';
+      }).join('');
+    },
+
     renderAll: function (root) {
       HH.renderSectionCopy(root);
       HH.renderSpecialties(root);
@@ -454,6 +490,7 @@
       HH.renderDirectory(root);
       HH.renderBlogPosts(root);
       HH.renderBookingOptions(root);
+      HH.renderGallery(root);
     },
 
     /* ----- Therapies: renders the grouped therapy cards on the services page ----- */
@@ -594,6 +631,7 @@
       apiGet('/directory').then(function (d) { cache.directory = d; }).catch(function () {}),
       apiGet('/blogposts').then(function (d) { cache.blogposts = d; }).catch(function () {}),
       apiGet('/bookingoptions').then(function (d) { cache.bookingoptions = d; }).catch(function () {}),
+      apiGet('/gallery').then(function (d) { cache.gallery = d; }).catch(function () {}),
       getAdminToken() ? apiGet('/appointments').then(function (d) { cache.appointments = d; }).catch(function () {}) : Promise.resolve()
     ]);
   }
