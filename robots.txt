@@ -8,4 +8,4 @@ Disallow: /scripts/
 Disallow: /node_modules/
 Disallow: /uploads/
 
-Sitemap: https://healinghandsphysio.in/sitemap.xml
+Sitemap: https://healinghandsphysiotheraphy.com/sitemap.xml
