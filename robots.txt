@@ -1,6 +1,11 @@
 User-agent: *
 Allow: /
-Disallow: /node_modules/
 Disallow: /admin.html
+Disallow: /api/
+Disallow: /lib/
+Disallow: /supabase/
+Disallow: /scripts/
+Disallow: /node_modules/
+Disallow: /uploads/
 
 Sitemap: https://healinghandsphysio.in/sitemap.xml
