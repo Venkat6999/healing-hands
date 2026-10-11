@@ -12,6 +12,8 @@
     { "source": "/blog.html", "destination": "/pages/blog.html" },
     { "source": "/faq.html", "destination": "/pages/faq.html" },
     { "source": "/book-appointment.html", "destination": "/pages/book-appointment.html" },
+    { "source": "/physiotherapy-in-hanamkonda.html", "destination": "/pages/physiotherapy-in-hanamkonda.html" },
+    { "source": "/physiotherapy-in-warangal.html", "destination": "/pages/physiotherapy-in-warangal.html" },
     { "source": "/admin.html", "destination": "/pages/admin.html" }
   ],
 
